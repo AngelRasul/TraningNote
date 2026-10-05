@@ -1452,74 +1452,22 @@
       plank_wrestler: './assets/images/bridge_plank_1791052365202.jpg'
     };
 
-    // Запасной открытый CDN на случай отсутствия или сбоя
-    const EXERCISE_API_CONFIG = {
-      primaryCdn: 'https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises',
-      backupCdn: 'https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises',
-      storageCacheKey: 'training_note_img_cache_v3'
-    };
-
-    const BACKUP_EXERCISE_MEDIA_MAP = {
-      sq_20: 'Barbell_Squat/0.jpg',
-      ohp_20: 'Barbell_Overhead_Press/0.jpg',
-      row_20: 'Bent_Over_Barbell_Row/0.jpg',
-      fp_db: 'Dumbbell_Floor_Press/0.jpg',
-      curl_db: 'Dumbbell_Bicep_Curl/0.jpg',
-      pu_bw: 'Pushups/0.jpg',
-      hollow_bw: 'Hollow_Body_Hold/0.jpg',
-      rdl_20: 'Romanian_Deadlift/0.jpg',
-      shrug_20: 'Barbell_Shrug/0.jpg',
-      db_arnold: 'Arnold_Press/0.jpg',
-      db_split: 'Bulgarian_Split_Squat/0.jpg',
-      db_ext: 'Standing_Dumbbell_Triceps_Extension/0.jpg',
-      pike_bw: 'Pike_Pushups/0.jpg',
-      calf_bw: 'Standing_Calf_Raises/0.jpg',
-      front_sq_20: 'Front_Barbell_Squat/0.jpg',
-      row_sup_20: 'Reverse_Grip_Barbell_Row/0.jpg',
-      db_lat: 'Side_Lateral_Raise/0.jpg',
-      db_hammer: 'Hammer_Curls/0.jpg',
-      diam_bw: 'Diamond_Pushups/0.jpg',
-      plank_wrestler: 'Bridge/0.jpg'
-    };
-
-    let imageCache = {};
+    // Очистка устаревшего кэша внешних фотографий
     try {
-      imageCache = JSON.parse(localStorage.getItem(EXERCISE_API_CONFIG.storageCacheKey) || '{}');
-    } catch(e) { imageCache = {}; }
+      localStorage.removeItem('training_note_img_cache_v3');
+    } catch(e) {}
 
     function getExerciseImgUrl(exId) {
-      if (ANATOMICAL_3D_MEDIA_MAP[exId]) {
-        return ANATOMICAL_3D_MEDIA_MAP[exId];
-      }
-      if (imageCache[exId]) return imageCache[exId];
-      const relPath = BACKUP_EXERCISE_MEDIA_MAP[exId];
-      if (!relPath) return null;
-      return `${EXERCISE_API_CONFIG.primaryCdn}/${relPath}`;
+      return ANATOMICAL_3D_MEDIA_MAP[exId] || null;
     }
 
     function onImageLoadSuccess(exId, url) {
-      if (!imageCache[exId] && url) {
-        imageCache[exId] = url;
-        try {
-          localStorage.setItem(EXERCISE_API_CONFIG.storageCacheKey, JSON.stringify(imageCache));
-        } catch(e) {}
-      }
+      // Локальные анатомические 3D-иллюстрации Gemini
     }
 
     function onImageLoadError(imgEl, exId) {
-      // При сбое локального файла переключаемся на запасной открытый CDN
-      const relPath = BACKUP_EXERCISE_MEDIA_MAP[exId];
-      if (relPath && !imgEl.src.includes('free-exercise-db')) {
-        imgEl.src = `${EXERCISE_API_CONFIG.primaryCdn}/${relPath}`;
-        return;
-      }
-      if (relPath && imgEl.src.includes('cdn.jsdelivr.net')) {
-        imgEl.src = `${EXERCISE_API_CONFIG.backupCdn}/${relPath}`;
-        return;
-      }
-      // Если все источники недоступны — аккуратная нейтральная светлая заглушка
       imgEl.style.display = 'none';
-      const placeholder = imgEl.parentElement?.querySelector('.exercise-placeholder');
+      const placeholder = imgEl.parentElement ? imgEl.parentElement.querySelector('.exercise-placeholder') : null;
       if (placeholder) {
         placeholder.style.display = 'flex';
       }
