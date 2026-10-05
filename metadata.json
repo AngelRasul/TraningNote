@@ -1,0 +1,6 @@
+{
+  "name": "Training Note — Годовой план тренировок",
+  "description": "Персональный годовой план силовых тренировок и трекер набора мышечной массы с разборной штангой 20 кг в эстетике тетради Near (Death Note).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

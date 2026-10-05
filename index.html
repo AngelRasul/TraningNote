@@ -1,0 +1,3629 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Training Note — Годовой план тренировок</title>
+  <meta name="description" content="Персональный годовой план силовых тренировок и трекер набора мышечной массы с разборной штангой 20 кг в эстетике тетради Near (Death Note)." />
+
+  <script>
+    /* Блокировка доступа только для Android. На iPhone, iPad и ПК ничего не создаётся */
+    (function checkPlatform() {
+      try {
+        var ua = (navigator.userAgent || '').toLowerCase();
+        var isAndroid = /android/i.test(ua);
+        if (navigator.userAgentData && navigator.userAgentData.platform === 'Android') {
+          isAndroid = true;
+        }
+        if (isAndroid) {
+          document.addEventListener('DOMContentLoaded', function() {
+            var shell = document.getElementById('app-shell');
+            if (shell) shell.remove();
+            var nav = document.querySelector('.tabs-nav');
+            if (nav) nav.remove();
+            var cvs = document.getElementById('holographic-canvas');
+            if (cvs) cvs.remove();
+
+            var gate = document.createElement('div');
+            gate.id = 'android-denied-gate';
+            gate.style.cssText = 'position:fixed;inset:0;background:#ffffff;color:#000000;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;z-index:9999999;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;';
+            gate.innerHTML = '<div style="max-width:340px;width:100%;border:1.5px solid #000000;padding:36px 20px;background:#ffffff;"><h1 style="font-size:1.5rem;font-weight:900;letter-spacing:0.06em;margin-bottom:12px;text-transform:uppercase;">ACCESS DENIED</h1><p style="font-size:0.95rem;line-height:1.5;color:#3a3a3c;margin:0;">Доступ с Android-устройств закрыт.<br>Откройте с iPhone.</p></div>';
+            document.body.appendChild(gate);
+          });
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+  @font-face {
+      font-family: 'DeathNote';
+      src: url('./assets/fonts/deathnote.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      /* Primary: Pastel Pink & Outline */
+      --primary-fill: #F3B5CF;
+      --primary-stroke: #E581B1;
+      --primary-text: #2c1b24;
+
+      /* Secondary: Pastel Lemon & Outline & Shadow */
+      --secondary-fill: #FAF5AB;
+      --secondary-stroke: #E9D461;
+      --secondary-shadow: #F3E488;
+      --secondary-text: #2b2608;
+
+      /* App Base Theme */
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-subtle: #fcf9fb;
+      --ink: #111111;
+      --muted: #82787e;
+      --border: #E581B1;
+      --hairline: #f2e6ed;
+
+      --font-title: 'DeathNote', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", -apple-system-subheadline, Inter, sans-serif;
+      --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      max-width: 100%;
+      min-width: 0;
+    }
+
+    html, body {
+      width: 100% !important;
+      max-width: 100% !important;
+      overflow-x: hidden !important;
+      overscroll-behavior-x: none !important;
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: calc(72px + env(safe-area-inset-bottom, 14px));
+    }
+
+    /* iPhone App Shell (Compact, clean padding) */
+    .app-shell {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 10px 12px calc(80px + env(safe-area-inset-bottom, 16px)) 12px;
+      touch-action: pan-y !important;
+      overflow-x: hidden !important;
+    }
+
+    /* Compact Minimal Header */
+    .site-header {
+      padding: 4px 2px 10px 2px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--hairline);
+    }
+    .brand-title {
+      font-family: var(--font-title);
+      font-size: 1.45rem;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.15;
+      margin: 0;
+      color: #111111;
+    }
+    .doc-stamp {
+      display: inline-flex;
+      align-items: center;
+      background: var(--secondary-fill);
+      border: 1px solid var(--secondary-stroke);
+      box-shadow: 0 1px 4px var(--secondary-shadow);
+      color: var(--secondary-text);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Compact iOS Cards */
+    .card {
+      border: 1.5px solid var(--hairline);
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      width: 100%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.01em;
+    }
+
+    /* iOS Buttons (Primary: Pastel Pink, Secondary: Pastel Lemon) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      padding: 8px 14px;
+    }
+    .btn:active:not(:disabled) {
+      transform: scale(0.97);
+    }
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed !important;
+    }
+
+    .btn-primary {
+      background: var(--primary-fill);
+      border: 1.5px solid var(--primary-stroke);
+      color: var(--primary-text);
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: #eb9cb9;
+      border-color: #d8699f;
+    }
+
+    .btn-secondary {
+      background: var(--secondary-fill);
+      border: 1.5px solid var(--secondary-stroke);
+      box-shadow: 0 2px 6px var(--secondary-shadow);
+      color: var(--secondary-text);
+    }
+    .btn-secondary:hover:not(:disabled) {
+      background: #f5ee87;
+      border-color: #d6be35;
+    }
+
+    .btn-sm {
+      min-height: 38px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      border-radius: 10px;
+    }
+
+    /* Compact Metrics Row */
+    .dashboard-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    .metric-box {
+      border: 1.5px solid var(--hairline);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .metric-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ccc;
+      display: inline-block;
+    }
+    .pulse-dot.active {
+      background: var(--primary-stroke);
+      box-shadow: 0 0 6px var(--primary-stroke);
+    }
+
+    /* Miniature 52-Week Puzzle Strip */
+    .puzzle-strip {
+      display: grid;
+      grid-template-columns: repeat(52, 1fr);
+      gap: 1px;
+      background: var(--hairline);
+      border: 1px solid var(--hairline);
+      border-radius: 4px;
+      overflow: hidden;
+      height: 10px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 4px;
+    }
+    .strip-cell {
+      background: #ffffff;
+      height: 100%;
+    }
+    .strip-cell.done {
+      background: var(--primary-stroke);
+    }
+    .strip-cell.current {
+      background: var(--secondary-fill);
+      outline: 1px solid var(--secondary-stroke);
+    }
+
+    /* Exercise Card */
+    .exercise-card {
+      border: 1.5px solid var(--hairline);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      background: #ffffff;
+      width: 100%;
+    }
+    .exercise-header-row {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      margin-bottom: 8px;
+    }
+    .exercise-name {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #111;
+    }
+    /* Strictly Two-Line Parameters */
+    .exercise-params-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-top: 2px;
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .exercise-params-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .exercise-params-line::-webkit-scrollbar { display: none; }
+    .param-token {
+      white-space: nowrap;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .param-muscle {
+      color: #111;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .param-dot {
+      color: var(--muted);
+      opacity: 0.5;
+    }
+
+    .exercise-prev-hint {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: var(--surface-subtle);
+      border: 1px solid var(--hairline);
+      padding: 3px 8px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .toggle-details-btn {
+      background: none;
+      border: none;
+      padding: 2px 0;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-stroke);
+      cursor: pointer;
+      text-align: left;
+    }
+    .exercise-details-pane {
+      display: none;
+      margin-top: 6px;
+      padding: 8px 10px;
+      background: #fffcfd;
+      border: 1px solid var(--hairline);
+      border-radius: 8px;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .exercise-body-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+    .exercise-media-box {
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      background: #ffffff;
+      width: 100%;
+      position: relative;
+      cursor: zoom-in;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .exercise-media-img {
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      display: block;
+      background: #ffffff;
+    }
+    .zoom-hint-badge {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+      background: rgba(250, 245, 171, 0.92);
+      border: 1px solid var(--secondary-stroke);
+      box-shadow: 0 1px 4px var(--secondary-shadow);
+      color: var(--secondary-text);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 6px;
+      pointer-events: none;
+    }
+    .exercise-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      background: #faf7f9;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+
+    /* Sets Table (Compact iOS List) */
+    .sets-table {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+      margin-top: 4px;
+    }
+    .set-row {
+      display: grid;
+      grid-template-columns: 1fr 68px 84px;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      background: #ffffff;
+      transition: all 0.15s ease;
+    }
+    .set-row.completed {
+      background: #fffef2;
+      border-color: var(--secondary-stroke);
+    }
+
+    .mobile-info-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .col-set {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #111;
+    }
+    .mobile-sub-meta {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .actual-reps-input {
+      width: 100%;
+      height: 38px;
+      border: 1.5px solid var(--hairline);
+      border-radius: 10px;
+      background: #ffffff;
+      color: #111;
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-align: center;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .actual-reps-input:focus {
+      border-color: var(--primary-stroke);
+      background: #fffcfd;
+    }
+    .actual-reps-input.target-met {
+      border-color: var(--secondary-stroke);
+      background: var(--secondary-fill);
+      color: var(--secondary-text);
+    }
+
+    .set-done-btn {
+      width: 100%;
+      min-height: 38px;
+      padding: 0;
+      font-size: 0.78rem;
+      border-radius: 10px;
+    }
+
+    /* iOS Bottom Tab Bar (Height: 54px + safe-area) */
+    .tabs-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-top: 1px solid var(--hairline);
+      padding: 4px 10px calc(4px + env(safe-area-inset-bottom, 0px));
+      margin: 0;
+      pointer-events: auto;
+    }
+    .tab-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 4px;
+      min-height: 48px;
+      background: transparent;
+      border: none;
+      color: #8e8e93;
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+      pointer-events: auto;
+      border-radius: 12px;
+    }
+    .tab-btn:active {
+      transform: scale(0.94);
+    }
+    .tab-btn .sf-icon {
+      width: 20px;
+      height: 20px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .tab-btn.active {
+      color: #111111;
+      font-weight: 700;
+      background: rgba(243, 181, 207, 0.35);
+    }
+    .tab-btn.active .sf-icon {
+      stroke: #d8699f;
+      stroke-width: 2.2;
+    }
+
+    /* Calendar List (Compact) */
+    .calendar-item-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 12px;
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      background: #ffffff;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .calendar-item-card:active {
+      transform: scale(0.98);
+      background: var(--surface-subtle);
+    }
+    .calendar-item-card.current {
+      border-color: var(--primary-stroke);
+      background: #fffcfd;
+    }
+    .calendar-item-card.done {
+      border-color: var(--secondary-stroke);
+      background: #fffef8;
+    }
+
+    .cal-filter-bar {
+      display: flex;
+      background: #f2eaf0;
+      padding: 3px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    .cal-filter-btn {
+      flex: 1;
+      border: none;
+      background: transparent;
+      padding: 6px 8px;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #8e8e93;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+    .cal-filter-btn.active {
+      background: var(--primary-fill);
+      color: var(--primary-text);
+      box-shadow: 0 1px 4px var(--primary-stroke);
+    }
+
+    /* Full Puzzle Grid */
+    .full-puzzle-grid {
+      display: grid;
+      grid-template-columns: repeat(13, 1fr);
+      gap: 3px;
+      width: 100%;
+      margin: 8px 0;
+    }
+    .puzzle-piece {
+      aspect-ratio: 1;
+      border: 1px solid var(--hairline);
+      border-radius: 4px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+    }
+    .puzzle-piece.done {
+      background: var(--primary-fill);
+      border-color: var(--primary-stroke);
+      color: var(--primary-text);
+    }
+    .puzzle-piece.current {
+      background: var(--secondary-fill);
+      border-color: var(--secondary-stroke);
+      color: var(--secondary-text);
+      box-shadow: 0 0 4px var(--secondary-shadow);
+    }
+
+    /* Floating Rest Timer */
+    .timer-bar {
+      position: fixed;
+      bottom: calc(64px + env(safe-area-inset-bottom, 0px));
+      left: 12px;
+      right: 12px;
+      max-width: 456px;
+      margin: 0 auto;
+      z-index: 9998;
+      background: rgba(250, 245, 171, 0.96);
+      border: 1.5px solid var(--secondary-stroke);
+      box-shadow: 0 4px 14px var(--secondary-shadow);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 16px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .timer-ring-svg {
+      width: 36px;
+      height: 36px;
+      transform: rotate(-90deg);
+      flex-shrink: 0;
+    }
+    .timer-ring-bg {
+      stroke: rgba(233, 212, 97, 0.3);
+      stroke-width: 3;
+      fill: none;
+    }
+    .timer-ring-fg {
+      stroke: #2b2608;
+      stroke-width: 3;
+      fill: none;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.4s linear;
+    }
+
+    /* Modals & Overlays */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-box {
+      background: #ffffff;
+      border: 1.5px solid var(--primary-stroke);
+      border-radius: 18px;
+      width: 100%;
+      max-width: 360px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(229, 129, 177, 0.2);
+    }
+
+    /* Toast */
+    .app-toast {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-30px);
+      background: #ffffff;
+      border: 1.5px solid var(--primary-stroke);
+      color: #111;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(229, 129, 177, 0.2);
+      z-index: 10001;
+      pointer-events: none;
+      opacity: 0;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+    }
+    .app-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Canvas background */
+    #holographic-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none !important;
+      z-index: 0;
+    }
+
+    .chart-box {
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      background: #ffffff;
+      height: 180px;
+      padding: 6px;
+      position: relative;
+      width: 100%;
+    }
+    canvas { width: 100%; height: 100%; display: block; }
+
+    .photos-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      width: 100%;
+    }
+    .photo-compare-card {
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 8px;
+      background: #ffffff;
+      text-align: center;
+    }
+    .photo-compare-img-box {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 8px;
+      background: #faf7f9;
+      margin-bottom: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo-compare-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .reps-input {
+      height: 38px;
+      border: 1.5px solid var(--hairline);
+      border-radius: 10px;
+      padding: 0 10px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      outline: none;
+    }
+    .reps-input:focus {
+      border-color: var(--primary-stroke);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Holographic Pearl Particles (Canvas Background) -->
+  <canvas id="holographic-canvas"></canvas>
+
+  <div class="app-shell" style="position: relative; z-index: 1;">
+
+    <!-- Header (Secret Documents & iOS Header) -->
+    <header class="site-header">
+      <div style="flex: 1 1 auto;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px;">
+          <span style="font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.05em; color: var(--muted); text-transform: uppercase;">SECRET DOCUMENTS · FILE No. 0001</span>
+          <span class="doc-stamp">CONFIDENTIAL</span>
+        </div>
+        <h1 class="brand-title">TRAINING NOTE</h1>
+        <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin-top: 5px;">57 кг · 170 см · 365 дн</div>
+      </div>
+    </header>
+
+    <!-- Top Navigation (Synchronized Segmented Bar) -->
+    <!-- Bottom Navigation (iOS Tab Bar with SF Symbols) -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" id="nav-btn-today" onclick="switchTab('today')">
+        <svg class="sf-icon" viewBox="0 0 24 24"><path d="M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+        <span>Сегодня</span>
+      </button>
+      <button class="tab-btn" id="nav-btn-plan" onclick="switchTab('plan')">
+        <svg class="sf-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span>План</span>
+      </button>
+      <button class="tab-btn" id="nav-btn-stats" onclick="switchTab('stats')">
+        <svg class="sf-icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        <span>Статистика</span>
+      </button>
+      <button class="tab-btn" id="nav-btn-profile" onclick="switchTab('profile')">
+        <svg class="sf-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Профиль</span>
+      </button>
+    </nav>
+
+    <!-- TAB 1: MAIN SCREEN (CLEAN, MINIMALIST, ESSENTIALS ONLY) -->
+    <section id="tab-today" class="tab-content">
+
+      <!-- Live Metric Bar & Compact Puzzle Indicator -->
+      <div class="dashboard-bar">
+        <div class="metric-box">
+          <div class="metric-label">
+            <span>Всего на тренировках</span>
+            <span style="display: inline-flex; align-items: center; gap: 5px;">
+              <span class="pulse-dot" id="live-pulse"></span>
+              <span id="session-status-text">В ПОКОЕ</span>
+            </span>
+          </div>
+          <div class="metric-value" id="live-total-timer">000:00:00</div>
+          <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-top: 4px;" id="current-session-label">
+            Текущая сессия: 00:00
+          </div>
+        </div>
+
+        <div class="metric-box">
+          <div class="metric-label">
+            <span>Пазл года (52 недели)</span>
+            <span id="strip-score-text">0 / 52</span>
+          </div>
+          <div class="puzzle-strip" id="mini-puzzle-strip" onclick="switchTab('puzzle')" title="Открыть полный пазл"></div>
+          <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-top: 6px; display: flex; justify-content: space-between; align-items: center;">
+            <span>Неделя 1</span>
+            <span style="color: #000000; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" onclick="switchTab('puzzle')">
+              <span>Развернуть</span>
+              <svg class="m3-icon" style="width:13px;height:13px;" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </span>
+            <span>Неделя 52</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mandatory Start Photo Gate Banner (shown on Workout #1 if photo missing) -->
+      <div id="start-photo-gate" class="photo-gate-banner" style="display: none;">
+        <div class="photo-gate-title" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg class="m3-icon" viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-1.8c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2z"/></svg>
+          <span>ФОТО ТЕЛА ДО СТАРТА</span>
+        </div>
+        
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 12px;">
+          Стартовые данные: <strong>Вес 57.0 кг · Рост 170.0 см · 30.10.2026</strong>
+        </div>
+
+        <div id="start-photo-upload-controls" style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+          <label class="btn btn-primary btn-sm" style="cursor: pointer;">
+            <svg class="m3-icon" viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-1.8c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2z"/></svg>
+            <span>Сделать / Загрузить фото</span>
+            <input type="file" id="start-photo-input" accept="image/*" style="display: none;" onchange="handleStartPhotoUpload(this)">
+          </label>
+        </div>
+
+        <div id="start-photo-preview-wrap" style="display: none; margin-top: 12px;">
+          <div class="photo-preview-box">
+            <img id="start-photo-img" class="photo-preview-img" alt="Стартовое фото тела">
+          </div>
+          <div style="margin-top: 6px;">
+            <label class="btn btn-sm" style="cursor: pointer;">
+              Заменить фото
+              <input type="file" accept="image/*" style="display: none;" onchange="handleStartPhotoUpload(this)">
+            </label>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <!-- Mandatory End Photo Gate Banner (shown on Final Workout if photo/params missing) -->
+      <div id="end-photo-gate" class="photo-gate-banner" style="display: none;">
+        <div class="photo-gate-title" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg class="m3-icon" viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-1.8c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2z"/></svg>
+          <span>ФОТО ТЕЛА И ПАРАМЕТРЫ ФИНАЛА</span>
+        </div>
+        
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 12px;">
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px;">Итоговый вес (кг):</label>
+            <input type="number" step="0.1" id="gate-end-weight-input" placeholder="например 66.5" class="reps-input" style="width: 140px;" oninput="onGateEndParamsChange()">
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px;">Итоговый рост (см):</label>
+            <input type="number" step="0.5" id="gate-end-height-input" placeholder="например 175" class="reps-input" style="width: 140px;" oninput="onGateEndParamsChange()">
+          </div>
+        </div>
+
+        <div id="end-photo-gate-upload-controls" style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+          <label class="btn btn-primary btn-sm" style="cursor: pointer;">
+            <svg class="m3-icon" viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-1.8c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2z"/></svg>
+            <span>Сделать / Загрузить второе фото</span>
+            <input type="file" id="end-gate-photo-input" accept="image/*" style="display: none;" onchange="handleEndGatePhotoUpload(this)">
+          </label>
+        </div>
+
+        <div id="end-photo-gate-preview-wrap" style="display: none; margin-top: 12px;">
+          <div class="photo-preview-box">
+            <img id="end-gate-photo-img" class="photo-preview-img" alt="Итоговое фото тела через 1 год">
+          </div>
+          <div style="margin-top: 6px;">
+            <label class="btn btn-sm" style="cursor: pointer;">
+              Заменить фото
+              <input type="file" accept="image/*" style="display: none;" onchange="handleEndGatePhotoUpload(this)">
+            </label>
+          </div>
+        </div>
+
+        
+      </div>
+
+      <!-- Current Workout Card -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            
+            <div class="card-title" id="cur-workout-title">ТРЕНИРОВКА №1 — FULL BODY A</div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-top: 2px;" id="cur-workout-date">
+              30 октября 2026 (Пятница) • 60 мин
+            </div>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <button class="btn btn-sm" onclick="navigateWorkout(-1)" title="Предыдущая">←</button>
+            <button class="btn btn-sm" onclick="navigateWorkout(1)" title="Следующая">→</button>
+          </div>
+        </div>
+
+        <!-- Start / End Workout Action Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; padding: 12px 16px; border: 1px solid var(--hairline); border-radius: 14px; background: #ffffff;">
+          <div>
+            <div style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; color: var(--muted);">Сеанс тренировки</div>
+            <div style="font-family: var(--font-title); font-size: 0.95rem; font-weight: 700;" id="session-action-status">Ожидает старта</div>
+          </div>
+          <button id="btn-toggle-session" class="btn btn-primary" onclick="toggleWorkoutSession()">
+            ▶ Начать тренировку
+          </button>
+        </div>
+
+        <!-- Live Workout Stats & Progression Banner -->
+        <div id="workout-stats-panel" class="workout-stats-panel"></div>
+
+        <!-- Exercise List Container -->
+        <div id="exercise-list-container"></div>
+
+        <div style="text-align: center; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--hairline);">
+          <button id="btn-finish-workout" class="btn btn-primary" style="padding: 10px 28px; width: 100%; max-width: 260px;" onclick="finishCurrentWorkout()">
+            Завершить тренировку
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    
+    
+    <!-- TAB 2: PLAN (CALENDAR OF 156/157 WORKOUTS) -->
+    <section id="tab-plan" class="tab-content" style="display: none;">
+      <div class="card">
+        <div class="card-head">
+          <div>
+            
+            <div class="card-title">ПЛАН ТРЕНИРОВОК НА ГОД</div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin-top: 2px;">
+              30 октября 2026 — 30 октября 2027 · Пт, Пн, Ср
+            </div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: #000000; text-align: right;">
+            <div style="font-size: 0.68rem; color: var(--muted); text-transform: uppercase;">Прогресс</div>
+            <span id="cal-count">0 / 157</span>
+          </div>
+        </div>
+
+        <div class="cal-filter-bar">
+          <button class="cal-filter-btn active" id="cal-filter-all" onclick="filterCalendar('all')">Все 157</button>
+          <button class="cal-filter-btn" id="cal-filter-pending" onclick="filterCalendar('pending')">Оставшиеся</button>
+          <button class="cal-filter-btn" id="cal-filter-done" onclick="filterCalendar('done')">Выполненные</button>
+        </div>
+
+        <div id="calendar-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+      </div>
+    </section>
+
+    <!-- TAB 3: STATS (OVERALL TIME, SETS, WEIGHT CHART, PUZZLE) -->
+    <section id="tab-stats" class="tab-content" style="display: none;">
+      <!-- Main Metric Summary Cards -->
+      <div class="dashboard-bar">
+        <div class="metric-box">
+          <div class="metric-label">Общее время тренировок</div>
+          <div class="metric-value" id="stats-total-time">000:00:00</div>
+          
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Выполнено тренировок</div>
+          <div class="metric-value" id="stats-workouts-done">0 / 157</div>
+          
+        </div>
+      </div>
+
+      <div class="dashboard-bar" style="margin-top: -8px;">
+        <div class="metric-box">
+          <div class="metric-label">Всего подходов</div>
+          <div class="metric-value" id="stats-total-sets">0</div>
+          
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Объём (со снарядами)</div>
+          <div class="metric-value" id="stats-total-volume">0 кг</div>
+          
+        </div>
+      </div>
+
+      <!-- 52-Week Puzzle -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            
+            <div class="card-title">ПАЗЛ ГОДА — 52 НЕДЕЛИ СИЛЫ</div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;" id="full-puzzle-score">
+            0 / 52 НЕДЕЛЬ
+          </div>
+        </div>
+        
+        <div class="full-puzzle-grid" id="full-puzzle-grid"></div>
+        <div class="puzzle-legend">
+          <div class="legend-item"><span class="legend-swatch done"></span> Завершено</div>
+          <div class="legend-item"><span class="legend-swatch current"></span> Текущая неделя</div>
+          <div class="legend-item"><span class="legend-swatch"></span> Ожидает</div>
+        </div>
+      </div>
+
+      <!-- Body Weight Chart & Logger -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">ГРАФИК МАССЫ ТЕЛА</div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin-top: 2px;">
+              Старт 57.0 кг → Цель 65.0 кг
+            </div>
+          </div>
+        </div>
+        <div class="chart-box" style="margin-bottom: 14px;">
+          <canvas id="weightCanvas"></canvas>
+        </div>
+
+        <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 14px;">
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; color: var(--muted);">Дата замера:</label>
+            <input type="date" id="weight-input-date" class="reps-input" style="width: 140px;">
+          </div>
+          <div>
+            <label style="display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px; color: var(--muted);">Вес (кг):</label>
+            <input type="number" step="0.1" id="weight-input-val" placeholder="например 58.2" class="reps-input" style="width: 130px;">
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="addWeightRecord()">Записать вес</button>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">
+          История замеров:
+        </div>
+        <div id="weight-history" style="max-height: 180px; overflow-y: auto;"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: PROFILE (DOSSIER, PHOTOS, VERDICT, 2-STEP RESET) -->
+    <section id="tab-profile" class="tab-content" style="display: none;">
+      <!-- Athlete Dossier -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            
+            <div class="card-title">ДЕЛО АТЛЕТА №0001</div>
+          </div>
+        </div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.8; margin-bottom: 12px; border-bottom: 1px solid var(--hairline); padding-bottom: 12px;">
+          <div>• Атлет: Мужчина, 16 лет, 170 см, стартовый вес 57.0 кг (эктоморф)</div>
+          <div>• База: 5 лет греко-римской борьбы (подготовленные связки, крепкий кор)</div>
+          <div>• Инвентарь: 1 разборная штанга 20 кг (или 2 гантели по 10 кг)</div>
+          <div>• Расписание: Пятница, Понедельник, Среда (по 60 мин с отдыхом между днями)</div>
+        </div>
+        
+      </div>
+
+      <!-- Before and After Photos -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">ФОТОГРАФИИ ТЕЛА (ТРАНСФОРМАЦИЯ)</div>
+        </div>
+        <div class="photos-compare-grid">
+          <div class="photo-compare-card">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; font-weight: 700; margin-bottom: 4px;">
+              СТАРТ (30.10.2026)
+            </div>
+            <div class="photo-compare-img-box">
+              <img id="profile-start-img" style="display: none;" alt="Стартовое фото">
+              <div id="profile-start-placeholder" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-align: center; padding: 20px;">
+                Фото отсутствует
+              </div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-top: 4px;">
+              57.0 кг · 170.0 см
+            </div>
+            <div style="margin-top: 6px;">
+              <label class="btn btn-sm btn-secondary" style="cursor: pointer; font-size: 0.7rem;">
+                <span>Загрузить / Заменить</span>
+                <input type="file" accept="image/*" style="display: none;" onchange="handleStartPhotoUpload(this)">
+              </label>
+            </div>
+          </div>
+
+          <div class="photo-compare-card">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; font-weight: 700; margin-bottom: 4px;">
+              ФИНАЛ (30.10.2027)
+            </div>
+            <div class="photo-compare-img-box">
+              <img id="profile-end-img" style="display: none;" alt="Финальное фото">
+              <div id="profile-end-placeholder" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-align: center; padding: 20px;">
+                Ожидает закрытия года
+              </div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-top: 4px;" id="profile-end-data">
+              -- кг · -- см
+            </div>
+            <div style="margin-top: 6px;">
+              <label class="btn btn-sm btn-secondary" style="cursor: pointer; font-size: 0.7rem;">
+                <span>Загрузить / Заменить</span>
+                <input type="file" accept="image/*" style="display: none;" onchange="handleEndPhotoUpload(this)">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Year Verdict Section -->
+      <div class="card">
+        <div class="card-head">
+          <div>
+            <div class="card-title">ИТОГ ГОДА</div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--muted);" id="verdict-status-badge">
+            ЗАКРЫТО ДО 30.10.2027
+          </div>
+        </div>
+
+        <div id="verdict-locked-view" style="font-family: var(--font-body); font-size: 0.82rem; color: var(--muted); line-height: 1.5; padding: 4px 0;">
+          Подведение итогов откроется 30 октября 2027 года после завершения 157 тренировок программы.
+        </div>
+
+        <div id="verdict-input-section" style="display: none;">
+          
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;">
+            <div>
+              <label style="display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px;">Итоговый вес (кг):</label>
+              <input type="number" step="0.1" id="final-weight-input" placeholder="например 66.5" class="reps-input" style="width: 140px;">
+            </div>
+            <div>
+              <label style="display: block; font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; margin-bottom: 4px;">Итоговый рост (см):</label>
+              <input type="number" step="0.5" id="final-height-input" placeholder="например 175" class="reps-input" style="width: 140px;">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; font-weight: 700; margin-bottom: 6px;">
+              Контрольное фото тела через 1 год:
+            </div>
+            <label class="btn btn-sm btn-secondary" style="cursor: pointer;">
+              <span>Выбрать фото тела</span>
+              <input type="file" id="end-photo-input" accept="image/*" style="display: none;" onchange="handleEndPhotoUpload(this)">
+            </label>
+            <span id="end-photo-status" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin-left: 8px;">Фото не добавлено</span>
+          </div>
+
+          <button id="btn-calc-verdict" class="btn btn-primary" onclick="calculateYearVerdict()">
+            Рассчитать вердикт Near
+          </button>
+        </div>
+
+        <div id="verdict-result-box" style="display: none; margin-top: 16px;"></div>
+
+        <div id="photos-comparison-wrap" style="display: none; margin-top: 16px;">
+          <div class="photos-compare-grid">
+            <div class="photo-compare-card">
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; font-weight: 700; margin-bottom: 4px;">
+                СТАРТ: 30.10.2026
+              </div>
+              <div class="photo-compare-img-box">
+                <img id="comp-start-img" alt="Фото старт">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); margin-top: 4px;" id="comp-start-data">
+                57.0 кг · 170.0 см
+              </div>
+            </div>
+
+            <div class="photo-compare-card">
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; font-weight: 700; margin-bottom: 4px;">
+                ИТОГ: 30.10.2027
+              </div>
+              <div class="photo-compare-img-box">
+                <img id="comp-end-img" alt="Фото финал">
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: #000000; margin-top: 4px;" id="comp-end-data">
+                -- кг · -- см
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="verdict-chart-wrap" style="display: none; margin-top: 16px;">
+          <div class="chart-box">
+            <canvas id="finalYearCanvas"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Management: JSON Export & 2-Step Reset -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">УПРАВЛЕНИЕ ДАННЫМИ</div>
+        </div>
+        
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn btn-sm btn-secondary" onclick="exportDataJson()">
+            <svg class="sf-icon" style="width:15px;height:15px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg>
+            <span>Экспорт данных (JSON)</span>
+          </button>
+          <button class="btn btn-sm btn-secondary" style="border-color: #8e8e93; color: #000000;" onclick="openResetModal()">
+            <span>Сбросить все данные</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- TWO-STEP RESET CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="reset-confirm-modal" onclick="if(event.target === this) closeResetModal()">
+    <div class="modal-box">
+      <div style="font-family: var(--font-title); font-size: 1.15rem; color: #111111; margin-bottom: 8px; font-weight: 700; text-transform: uppercase;">
+        СБРОС ДЕЛА
+      </div>
+      <p style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 18px; color: var(--muted);">
+        Это действие удалит весь текущий прогресс, историю замеров веса и фотографии. Продолжить?
+      </p>
+      <div style="display: flex; justify-content: flex-end; gap: 8px;">
+        <button class="btn btn-sm btn-secondary" onclick="closeResetModal()" style="min-width: 80px;">
+          Отмена
+        </button>
+        <button class="btn btn-sm btn-primary" onclick="executeResetAllData()" style="min-width: 90px;">
+          Сбросить
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING REST TIMER (TIMESTAMP BASED) -->
+  <div id="timer-bar" class="timer-bar" style="display: none;">
+    <svg class="timer-ring-svg">
+      <circle class="timer-ring-bg" cx="20" cy="20" r="16"></circle>
+      <circle class="timer-ring-fg" id="timer-ring-fg" cx="20" cy="20" r="16"></circle>
+    </svg>
+    <div style="flex: 1; min-width: 0;">
+      <div style="font-family: var(--font-title); font-size: 0.78rem; font-weight: 700; text-transform: uppercase;">ОТДЫХ: <span id="timer-ring-text">90s</span></div>
+      <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" id="timer-subtext">Восстановление</div>
+    </div>
+    <div style="display: flex; gap: 4px;">
+      <button class="btn btn-sm" style="min-height: 36px; padding: 0 8px;" onclick="adjustTimer(15)">+15с</button>
+      <button class="btn btn-sm" style="min-height: 36px; padding: 0 8px;" onclick="skipTimer()">Пропуск</button>
+    </div>
+  </div>
+
+  <!-- WORKOUT FINISHED MODAL -->
+  <div class="modal-overlay" id="finish-modal">
+    <div class="modal-box">
+      <div style="font-family: var(--font-title); font-size: 1.1rem; color: #000000; margin-bottom: 6px; font-weight: 700; text-transform: uppercase;">
+        ТРЕНИРОВКА ЗАВЕРШЕНА
+      </div>
+      <p style="font-size: 0.9rem; margin-bottom: 12px; font-style: italic; color: var(--muted);">
+        «Запись внесена в Training Note. Ещё одна деталь в пазле силы.»
+      </p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px; font-family: var(--font-mono); font-size: 0.8rem; border: 1px solid var(--hairline); padding: 10px; background: #fafafa;">
+        <div>Подходов: <strong id="modal-sets">0</strong></div>
+        <div>Повторений: <strong id="modal-reps">0</strong></div>
+        <div>Объём (снаряды): <strong id="modal-volume">0 кг</strong></div>
+        <div>С весом тела: <strong id="modal-bw-reps">0 повт</strong></div>
+        <div id="modal-comparison" style="grid-column: span 2; margin-top: 4px; padding-top: 6px; border-top: 1px dashed var(--hairline); font-size: 0.74rem;"></div>
+      </div>
+      <div style="text-align: right;">
+        <button class="btn btn-primary btn-sm" onclick="closeFinishModal()">Продолжить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCISE IMAGE LIGHTBOX MODAL (ZOOM VIEW) -->
+  <div class="modal-overlay" id="lightbox-modal" onclick="closeImageLightbox(event)">
+    <div class="lightbox-modal-content" onclick="event.stopPropagation()">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid var(--hairline); padding-bottom: 8px;">
+        <div>
+          <div style="font-family: var(--font-title); font-size: 1.05rem; font-weight: 700; text-transform: uppercase;" id="lightbox-title">УПРАЖНЕНИЕ</div>
+          <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #000000;" id="lightbox-muscle">Работающие мышцы</div>
+        </div>
+        <button class="btn btn-sm" onclick="closeImageLightbox()" style="display: inline-flex; align-items: center; gap: 4px;">
+          <svg class="m3-icon" viewBox="0 0 24 24" style="width:14px;height:14px;"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <span>Закрыть</span>
+        </button>
+      </div>
+      <div style="text-align: center; background: #ffffff; padding: 4px;">
+        <img id="lightbox-img" class="lightbox-modal-img" alt="Анатомическая 3D-иллюстрация">
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-align: center; margin-top: 8px;">
+        Анатомическая 3D-модель: слева начало движения, справа завершающая фаза. Подсвеченные красным — целевые работающие мышцы.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================================
+       1. АНАТОМИЧЕСКИЕ 3D-ИЛЛЮСТРАЦИИ УПРАЖНЕНИЙ (ДВА ПОЛОЖЕНИЯ, МЫШЦЫ КРАСНЫМ)
+       ========================================================================= */
+    // Сгенерированные 3D анатомические иллюстрации: светло-серая модель человека,
+    // два положения движения (старт/финиш), работающие мышцы подсвечены красным
+    const ANATOMICAL_3D_MEDIA_MAP = {
+      sq_20: './assets/images/barbell_squat_1791052184014.jpg',
+      ohp_20: './assets/images/overhead_press_1791052193111.jpg',
+      row_20: './assets/images/barbell_row_1791052201832.jpg',
+      fp_db: './assets/images/floor_press_1791052210580.jpg',
+      curl_db: './assets/images/bicep_curl_1791052219762.jpg',
+      pu_bw: './assets/images/pushups_1791052229892.jpg',
+      hollow_bw: './assets/images/hollow_body_1791052240994.jpg',
+      rdl_20: './assets/images/romanian_deadlift_1791052250405.jpg',
+      shrug_20: './assets/images/barbell_shrug_1791052259823.jpg',
+      db_arnold: './assets/images/arnold_press_1791052269216.jpg',
+      db_split: './assets/images/split_squat_1791052278766.jpg',
+      db_ext: './assets/images/tricep_extension_1791052288991.jpg',
+      pike_bw: './assets/images/pike_pushup_1791052297865.jpg',
+      calf_bw: './assets/images/calf_raise_1791052307144.jpg',
+      front_sq_20: './assets/images/front_squat_1791052316590.jpg',
+      row_sup_20: './assets/images/reverse_row_1791052327306.jpg',
+      db_lat: './assets/images/lateral_raise_1791052336344.jpg',
+      db_hammer: './assets/images/hammer_curl_1791052344996.jpg',
+      diam_bw: './assets/images/diamond_pushup_1791052356034.jpg',
+      plank_wrestler: './assets/images/bridge_plank_1791052365202.jpg'
+    };
+
+    // Запасной открытый CDN на случай отсутствия или сбоя
+    const EXERCISE_API_CONFIG = {
+      primaryCdn: 'https://cdn.jsdelivr.net/gh/yuhonas/free-exercise-db@main/exercises',
+      backupCdn: 'https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/exercises',
+      storageCacheKey: 'training_note_img_cache_v3'
+    };
+
+    const BACKUP_EXERCISE_MEDIA_MAP = {
+      sq_20: 'Barbell_Squat/0.jpg',
+      ohp_20: 'Barbell_Overhead_Press/0.jpg',
+      row_20: 'Bent_Over_Barbell_Row/0.jpg',
+      fp_db: 'Dumbbell_Floor_Press/0.jpg',
+      curl_db: 'Dumbbell_Bicep_Curl/0.jpg',
+      pu_bw: 'Pushups/0.jpg',
+      hollow_bw: 'Hollow_Body_Hold/0.jpg',
+      rdl_20: 'Romanian_Deadlift/0.jpg',
+      shrug_20: 'Barbell_Shrug/0.jpg',
+      db_arnold: 'Arnold_Press/0.jpg',
+      db_split: 'Bulgarian_Split_Squat/0.jpg',
+      db_ext: 'Standing_Dumbbell_Triceps_Extension/0.jpg',
+      pike_bw: 'Pike_Pushups/0.jpg',
+      calf_bw: 'Standing_Calf_Raises/0.jpg',
+      front_sq_20: 'Front_Barbell_Squat/0.jpg',
+      row_sup_20: 'Reverse_Grip_Barbell_Row/0.jpg',
+      db_lat: 'Side_Lateral_Raise/0.jpg',
+      db_hammer: 'Hammer_Curls/0.jpg',
+      diam_bw: 'Diamond_Pushups/0.jpg',
+      plank_wrestler: 'Bridge/0.jpg'
+    };
+
+    let imageCache = {};
+    try {
+      imageCache = JSON.parse(localStorage.getItem(EXERCISE_API_CONFIG.storageCacheKey) || '{}');
+    } catch(e) { imageCache = {}; }
+
+    function getExerciseImgUrl(exId) {
+      if (ANATOMICAL_3D_MEDIA_MAP[exId]) {
+        return ANATOMICAL_3D_MEDIA_MAP[exId];
+      }
+      if (imageCache[exId]) return imageCache[exId];
+      const relPath = BACKUP_EXERCISE_MEDIA_MAP[exId];
+      if (!relPath) return null;
+      return `${EXERCISE_API_CONFIG.primaryCdn}/${relPath}`;
+    }
+
+    function onImageLoadSuccess(exId, url) {
+      if (!imageCache[exId] && url) {
+        imageCache[exId] = url;
+        try {
+          localStorage.setItem(EXERCISE_API_CONFIG.storageCacheKey, JSON.stringify(imageCache));
+        } catch(e) {}
+      }
+    }
+
+    function onImageLoadError(imgEl, exId) {
+      // При сбое локального файла переключаемся на запасной открытый CDN
+      const relPath = BACKUP_EXERCISE_MEDIA_MAP[exId];
+      if (relPath && !imgEl.src.includes('free-exercise-db')) {
+        imgEl.src = `${EXERCISE_API_CONFIG.primaryCdn}/${relPath}`;
+        return;
+      }
+      if (relPath && imgEl.src.includes('cdn.jsdelivr.net')) {
+        imgEl.src = `${EXERCISE_API_CONFIG.backupCdn}/${relPath}`;
+        return;
+      }
+      // Если все источники недоступны — аккуратная нейтральная светлая заглушка
+      imgEl.style.display = 'none';
+      const placeholder = imgEl.parentElement?.querySelector('.exercise-placeholder');
+      if (placeholder) {
+        placeholder.style.display = 'flex';
+      }
+    }
+
+    /* Увеличение картинки по клику (Lightbox) */
+    function openImageLightbox(src, title, muscle) {
+      if (!src) return;
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const tEl = document.getElementById('lightbox-title');
+      const mEl = document.getElementById('lightbox-muscle');
+      if (img) img.src = src;
+      if (tEl) tEl.textContent = title || 'Упражнение';
+      if (mEl) mEl.textContent = muscle ? `Целевые работающие мышцы: ${muscle}` : '';
+      if (modal) modal.classList.add('active');
+    }
+
+    function closeImageLightbox(e) {
+      if (e && e.target && e.target.id === 'lightbox-img') return;
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) modal.classList.remove('active');
+    }
+
+    /* =========================================================================
+       2. ИНТЕГРАЦИЯ INDEXEDDB ДЛЯ ФОТОГРАФИЙ ТЕЛА
+       ========================================================================= */
+    function openPhotoDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open('training_note_photos_db', 1);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains('photos')) {
+            db.createObjectStore('photos', { keyPath: 'id' });
+          }
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    async function savePhotoToDB(id, photoData) {
+      const db = await openPhotoDB();
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction('photos', 'readwrite');
+        const store = tx.objectStore('photos');
+        store.put({ id, ...photoData });
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => reject(tx.error);
+      });
+    }
+
+    async function getPhotoFromDB(id) {
+      try {
+        const db = await openPhotoDB();
+        return new Promise((resolve, reject) => {
+          const tx = db.transaction('photos', 'readonly');
+          const store = tx.objectStore('photos');
+          const req = store.get(id);
+          req.onsuccess = () => resolve(req.result || null);
+          req.onerror = () => reject(req.error);
+        });
+      } catch(e) {
+        return null;
+      }
+    }
+
+    // Сжатие изображения до разумного размера (макс 1200px, JPEG 0.82)
+    function compressImageFile(file, maxDimension = 1200, quality = 0.82) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            let w = img.width;
+            let h = img.height;
+            if (w > maxDimension || h > maxDimension) {
+              if (w > h) {
+                h = Math.round((h * maxDimension) / w);
+                w = maxDimension;
+              } else {
+                w = Math.round((w * maxDimension) / h);
+                h = maxDimension;
+              }
+            }
+            const canvas = document.createElement('canvas');
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+            const dataUrl = canvas.toDataURL('image/jpeg', quality);
+            resolve(dataUrl);
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    /* Обработка загрузки стартового фото тела */
+    async function handleStartPhotoUpload(inputEl) {
+      if (!inputEl.files || !inputEl.files[0]) return;
+      const file = inputEl.files[0];
+      try {
+        const compressedDataUrl = await compressImageFile(file, 1200, 0.82);
+        const photoRecord = {
+          dataUrl: compressedDataUrl,
+          date: '30.10.2026',
+          weight: 57.0,
+          height: 170.0
+        };
+        await savePhotoToDB('start_photo', photoRecord);
+        updateStartPhotoUI(photoRecord);
+        updateSessionStartButtonLock();
+      } catch(e) {
+        showToastNotification('Ошибка при сжатии и сохранении фото');
+      }
+    }
+
+    function updateStartPhotoUI(photoRecord) {
+      const gate = document.getElementById('start-photo-gate');
+      const uploadControls = document.getElementById('start-photo-upload-controls');
+      const previewWrap = document.getElementById('start-photo-preview-wrap');
+      const previewImg = document.getElementById('start-photo-img');
+
+      if (photoRecord && photoRecord.dataUrl) {
+        if (uploadControls) uploadControls.style.display = 'none';
+        if (previewWrap) previewWrap.style.display = 'block';
+        if (previewImg) previewImg.src = photoRecord.dataUrl;
+        if (gate) {
+          gate.style.background = '#fafafa';
+          const title = gate.querySelector('.photo-gate-title');
+          if (title) {
+            title.innerHTML = '<svg class="m3-icon" style="color:#000000;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> <span>СТАРТОВОЕ ФОТО СОХРАНЕНО (57 КГ / 170 СМ)</span>';
+            title.style.color = 'var(--ink)';
+          }
+        }
+      } else {
+        if (uploadControls) uploadControls.style.display = 'flex';
+        if (previewWrap) previewWrap.style.display = 'none';
+        if (gate) {
+          gate.style.background = '#f5f5f7';
+          const title = gate.querySelector('.photo-gate-title');
+          if (title) {
+            title.innerHTML = '<svg class="m3-icon" viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-1.8c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2z"/></svg> <span>ОБЯЗАТЕЛЬНО: ФОТО ТЕЛА ДО СТАРТА</span>';
+            title.style.color = '#000000';
+          }
+        }
+      }
+    }
+
+    /* Обработка загрузки итогового фото тела (на экране вердикта) */
+    async function handleEndPhotoUpload(inputEl) {
+      if (!inputEl.files || !inputEl.files[0]) return;
+      const file = inputEl.files[0];
+      try {
+        const compressedDataUrl = await compressImageFile(file, 1200, 0.82);
+        let photoRecord = await getPhotoFromDB('end_photo') || { date: '30.10.2027', weight: 0, height: 0 };
+        photoRecord.dataUrl = compressedDataUrl;
+        const finalWeight = parseFloat(document.getElementById('final-weight-input')?.value);
+        const finalHeight = parseFloat(document.getElementById('final-height-input')?.value);
+        if (!isNaN(finalWeight) && finalWeight >= 30) photoRecord.weight = finalWeight;
+        if (!isNaN(finalHeight) && finalHeight >= 100) photoRecord.height = finalHeight;
+
+        await savePhotoToDB('end_photo', photoRecord);
+        const statusEl = document.getElementById('end-photo-status');
+        if (statusEl) {
+          statusEl.innerHTML = '<svg class="m3-icon" style="color:#000000;width:14px;height:14px;vertical-align:middle;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> <span>Итоговое фото сохранено в IndexedDB</span>';
+          statusEl.style.color = '#000000';
+        }
+        hasEndPhotoInDB = !!(photoRecord.dataUrl && photoRecord.weight >= 30 && photoRecord.height >= 100);
+        updateEndGateUI(photoRecord);
+        updateSessionStartButtonLock();
+      } catch(e) {
+        showToastNotification('Ошибка при сохранении фото: ' + e);
+      }
+    }
+
+    /* Обработка загрузки итогового фото тела в гейте перед финальной тренировкой */
+    async function handleEndGatePhotoUpload(inputEl) {
+      if (!inputEl.files || !inputEl.files[0]) return;
+      const file = inputEl.files[0];
+      try {
+        const compressedDataUrl = await compressImageFile(file, 1200, 0.82);
+        let endPhoto = await getPhotoFromDB('end_photo') || { date: '30.10.2027', weight: 0, height: 0 };
+        endPhoto.dataUrl = compressedDataUrl;
+        const wVal = parseFloat(document.getElementById('gate-end-weight-input')?.value);
+        const hVal = parseFloat(document.getElementById('gate-end-height-input')?.value);
+        if (!isNaN(wVal) && wVal >= 30) endPhoto.weight = wVal;
+        if (!isNaN(hVal) && hVal >= 100) endPhoto.height = hVal;
+
+        await savePhotoToDB('end_photo', endPhoto);
+        hasEndPhotoInDB = !!(endPhoto.dataUrl && endPhoto.weight >= 30 && endPhoto.height >= 100);
+        updateEndGateUI(endPhoto);
+        updateSessionStartButtonLock();
+
+        // Синхронизируем с экраном tab-verdict
+        const vWeight = document.getElementById('final-weight-input');
+        const vHeight = document.getElementById('final-height-input');
+        if (vWeight && endPhoto.weight > 0) vWeight.value = endPhoto.weight;
+        if (vHeight && endPhoto.height > 0) vHeight.value = endPhoto.height;
+        const vStatus = document.getElementById('end-photo-status');
+        if (vStatus) {
+          vStatus.innerHTML = '<svg class="m3-icon" style="color:#000000;width:14px;height:14px;vertical-align:middle;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> <span>Итоговое фото сохранено в IndexedDB</span>';
+          vStatus.style.color = '#000000';
+        }
+      } catch(e) {
+        showToastNotification('Ошибка при сохранении фото: ' + e);
+      }
+    }
+
+    async function onGateEndParamsChange() {
+      const wVal = parseFloat(document.getElementById('gate-end-weight-input')?.value);
+      const hVal = parseFloat(document.getElementById('gate-end-height-input')?.value);
+      let endPhoto = await getPhotoFromDB('end_photo') || { date: '30.10.2027', weight: 0, height: 0 };
+      if (!isNaN(wVal) && wVal >= 30) endPhoto.weight = wVal;
+      if (!isNaN(hVal) && hVal >= 100) endPhoto.height = hVal;
+
+      await savePhotoToDB('end_photo', endPhoto);
+      hasEndPhotoInDB = !!(endPhoto.dataUrl && endPhoto.weight >= 30 && endPhoto.height >= 100);
+      updateEndGateUI(endPhoto);
+      updateSessionStartButtonLock();
+
+      const vWeight = document.getElementById('final-weight-input');
+      const vHeight = document.getElementById('final-height-input');
+      if (vWeight && endPhoto.weight > 0) vWeight.value = endPhoto.weight;
+      if (vHeight && endPhoto.height > 0) vHeight.value = endPhoto.height;
+    }
+
+    function updateEndGateUI(endPhoto) {
+      const gate = document.getElementById('end-photo-gate');
+      const uploadControls = document.getElementById('end-photo-gate-upload-controls');
+      const previewWrap = document.getElementById('end-photo-gate-preview-wrap');
+      const previewImg = document.getElementById('end-gate-photo-img');
+      const weightInput = document.getElementById('gate-end-weight-input');
+      const heightInput = document.getElementById('gate-end-height-input');
+
+      if (endPhoto && endPhoto.weight && weightInput && !weightInput.value) {
+        weightInput.value = endPhoto.weight;
+      }
+      if (endPhoto && endPhoto.height && heightInput && !heightInput.value) {
+        heightInput.value = endPhoto.height;
+      }
+
+      if (endPhoto && endPhoto.dataUrl) {
+        if (uploadControls) uploadControls.style.display = 'none';
+        if (previewWrap) previewWrap.style.display = 'block';
+        if (previewImg) previewImg.src = endPhoto.dataUrl;
+      } else {
+        if (uploadControls) uploadControls.style.display = 'flex';
+        if (previewWrap) previewWrap.style.display = 'none';
+      }
+
+      const isComplete = !!(endPhoto && endPhoto.dataUrl && endPhoto.weight >= 30 && endPhoto.height >= 100);
+      if (isComplete) {
+        if (gate) {
+          gate.style.background = '#fafafa';
+          const title = gate.querySelector('.photo-gate-title');
+          if (title) {
+            title.innerHTML = `<svg class="m3-icon" style="color:#000000;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> <span>ИТОГОВЫЕ ДАННЫЕ ЗАФИКСИРОВАНЫ (${endPhoto.weight.toFixed(1)} КГ / ${endPhoto.height.toFixed(1)} СМ)</span>`;
+            title.style.color = 'var(--ink)';
+          }
+        }
+      } else {
+        if (gate) {
+          gate.style.background = '#f5f5f7';
+          const title = gate.querySelector('.photo-gate-title');
+          if (title) {
+            title.innerHTML = '<svg class="m3-icon" viewBox="0 0 24 24"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-1.8c1.77 0 3.2-1.43 3.2-3.2s-1.43-3.2-3.2-3.2-3.2 1.43-3.2 3.2 1.43 3.2 3.2 3.2z"/></svg> <span>ОБЯЗАТЕЛЬНО: ФОТО ТЕЛА И ПАРАМЕТРЫ ПЕРЕД ФИНАЛОМ</span>';
+            title.style.color = '#000000';
+          }
+        }
+      }
+    }
+
+    /* =========================================================================
+       3. БАЗА ДАННЫХ УПРАЖНЕНИЙ И РАСПИСАНИЕ (БЕЗ ДАТОВЫХ БАГОВ)
+       ========================================================================= */
+    const BASE_WORKOUTS = {
+      A: {
+        title: "Full Body A",
+        exercises: [
+          { id: "sq_20", name: "Приседания со штангой на спине", equip: "barbell", sets: 3, reps: "10-12", tempo: "3-0-1", rest: 90, muscle: "Квадрицепсы", tip: "Опускайся 3 секунды, не отрывая пятки. Взрывной подъем вверх." },
+          { id: "ohp_20", name: "Армейский жим стоя", equip: "barbell", sets: 3, reps: "10", tempo: "3-0-1", rest: 90, muscle: "Дельты, Трицепс", tip: "Корпус зажат, ягодицы напряжены, траектория ровная." },
+          { id: "row_20", name: "Тяга штанги в наклоне", equip: "barbell", sets: 3, reps: "12", tempo: "3-1-1", rest: 90, muscle: "Широчайшие", tip: "Наклон 45°, тяни локтями к поясу, фиксация 1 сек." },
+          { id: "fp_db", name: "Жим двух гантелей с пола", equip: "dumbbells", sets: 3, reps: "12", tempo: "3-0-1", rest: 60, muscle: "Грудь, Трицепс", tip: "Локти под углом 75°, пауза на полу, мощный выжим." },
+          { id: "curl_db", name: "Сгибания рук с гантелями стоя", equip: "dumbbells", sets: 3, reps: "12", tempo: "3-0-1", rest: 60, muscle: "Бицепс", tip: "Локти зафиксированы у ребер, без раскачки." },
+          { id: "pu_bw", name: "Отжимания от пола с паузой", equip: "bodyweight", sets: 3, reps: "15", tempo: "3-1-1", rest: 60, muscle: "Грудь", tip: "Касание грудью пола, 1 сек пауза внизу, взрыв вверх." },
+          { id: "hollow_bw", name: "Лодочка (Hollow Body)", equip: "bodyweight", sets: 3, reps: "35 сек", tempo: "Статика", rest: 60, muscle: "Кор (пресс)", tip: "Поясница вдавлена в пол, борцовская стабилизация." }
+        ]
+      },
+      B: {
+        title: "Full Body B",
+        exercises: [
+          { id: "rdl_20", name: "Румынская тяга со штангой", equip: "barbell", sets: 3, reps: "12", tempo: "3-1-1", rest: 90, muscle: "Бицепс бедра", tip: "Таз назад, спина ровная, натяжение задней поверхности." },
+          { id: "shrug_20", name: "Шраги со штангой 20 кг", equip: "barbell", sets: 3, reps: "15", tempo: "2-2-1", rest: 60, muscle: "Трапеции", tip: "Подъем плеч к ушам с фиксацией 2 секунды." },
+          { id: "db_arnold", name: "Жим Арнольда с гантелями сидя", equip: "dumbbells", sets: 3, reps: "10-12", tempo: "3-0-1", rest: 60, muscle: "Плечи", tip: "Плавное вращение предплечий из супинации в пронацию." },
+          { id: "db_split", name: "Болгарские сплит-приседания", equip: "dumbbells", sets: 3, reps: "10/нога", tempo: "3-0-1", rest: 90, muscle: "Квадрицепс", tip: "Задняя нога на опоре, четкий контроль колена." },
+          { id: "db_ext", name: "Французский жим с гантелью", equip: "dumbbells", sets: 3, reps: "12", tempo: "3-0-1", rest: 60, muscle: "Трицепс", tip: "Локти смотрят строго вперед, изоляция трицепса." },
+          { id: "pike_bw", name: "Пайк-отжимания (уголок)", equip: "bodyweight", sets: 3, reps: "10", tempo: "3-0-1", rest: 60, muscle: "Дельты", tip: "Таз высоко вверх, голова перед пальцами рук." },
+          { id: "calf_bw", name: "Подъемы на носок на 1 ноге", equip: "bodyweight", sets: 3, reps: "20/нога", tempo: "2-2-1", rest: 45, muscle: "Икры", tip: "Полная амплитуда с паузой в растяжке." }
+        ]
+      },
+      C: {
+        title: "Full Body C",
+        exercises: [
+          { id: "front_sq_20", name: "Фронтальные приседания", equip: "barbell", sets: 3, reps: "12", tempo: "3-1-1", rest: 90, muscle: "Квадрицепсы", tip: "Локти параллельны полу, корпус строго вертикален." },
+          { id: "row_sup_20", name: "Тяга штанги обратным хватом", equip: "barbell", sets: 3, reps: "12", tempo: "3-0-1", rest: 90, muscle: "Широчайшие", tip: "Хват снизу, плечи расправлены, локти к ребрам." },
+          { id: "db_lat", name: "Махи гантелями в стороны", equip: "dumbbells", sets: 3, reps: "15", tempo: "2-1-1", rest: 60, muscle: "Средняя дельта", tip: "Мизинцы чуть выше больших пальцев, без рывка." },
+          { id: "db_hammer", name: "Молотковые сгибания", equip: "dumbbells", sets: 3, reps: "12", tempo: "3-0-1", rest: 60, muscle: "Брахиалис", tip: "Хват нейтральный, укрепление захвата." },
+          { id: "diam_bw", name: "Алмазные отжимания", equip: "bodyweight", sets: 3, reps: "12-15", tempo: "3-0-1", rest: 60, muscle: "Трицепс", tip: "Большие и указательные пальцы соединены." },
+          { id: "plank_wrestler", name: "Борцовский мост на руках", equip: "bodyweight", sets: 3, reps: "40 сек", tempo: "Статика", rest: 60, muscle: "Шея, Спина", tip: "Упор на ладони и стопы, мягкий контроль шеи." }
+        ]
+      }
+    };
+
+    const MONTHLY_PROGRESSIONS = [
+      { month: 1, name: "Адаптация и траектория", sets: 3, repsDelta: 0, tempo: "3-0-1", staticSec: 35, restBb: 90, restDb: 60 },
+      { month: 2, name: "Пауза в растяжке (TUT)", sets: 3, repsDelta: 2, tempo: "3-1-1", staticSec: 40, restBb: 75, restDb: 50 },
+      { month: 3, name: "Объёмная перегрузка (4 сета)", sets: 4, repsDelta: 1, tempo: "3-1-1", staticSec: 45, restBb: 75, restDb: 50 },
+      { month: 4, name: "Эксцентрический акцент", sets: 4, repsDelta: 0, tempo: "4-1-1", staticSec: 45, restBb: 80, restDb: 55 },
+      { month: 5, name: "Плотность и выносливость", sets: 4, repsDelta: 3, tempo: "3-0-1", staticSec: 50, restBb: 60, restDb: 45 },
+      { month: 6, name: "Пиковая изоляция полугодия", sets: 4, repsDelta: 2, tempo: "3-1-2", staticSec: 55, restBb: 70, restDb: 50 },
+      { month: 7, name: "Контрастно-взрывная мощность", sets: 4, repsDelta: 1, tempo: "2-0-X", staticSec: 60, restBb: 80, restDb: 60 },
+      { month: 8, name: "Двойная изометрия (2с пауза)", sets: 4, repsDelta: 0, tempo: "3-2-1", staticSec: 50, restBb: 75, restDb: 55 },
+      { month: 9, name: "Метаболический пампинг", sets: 4, repsDelta: 4, tempo: "2-1-1", staticSec: 60, restBb: 50, restDb: 40 },
+      { month: 10, name: "Силовой контроль TUT Max", sets: 4, repsDelta: 1, tempo: "4-0-2", staticSec: 65, restBb: 75, restDb: 55 },
+      { month: 11, name: "Пиковая гипертрофия года", sets: 4, repsDelta: 3, tempo: "3-1-1", staticSec: 70, restBb: 65, restDb: 45 },
+      { month: 12, name: "Финализация нормативов", sets: 4, repsDelta: 5, tempo: "3-0-1", staticSec: 75, restBb: 60, restDb: 50 }
+    ];
+
+    
+    /* Проверка даты старта программы (30 октября 2026) */
+    function isProgramStarted() {
+      // 30 октября 2026 года 00:00:00
+      return new Date() >= new Date(2026, 9, 30, 0, 0, 0);
+    }
+
+    let ALL_WORKOUTS = [];
+
+    // Расчёт дат и 12-месячной прогрессии без перехода на летнее/зимнее время
+    function generateSchedule() {
+      ALL_WORKOUTS = [];
+      let cur = new Date(2026, 9, 30, 12, 0, 0); // 30 октября 2026 (Пятница)
+      const end = new Date(2027, 9, 30, 23, 59, 59); // 30 октября 2027
+      let idx = 0;
+      const types = ['A', 'B', 'C'];
+
+      while (cur <= end) {
+        const day = cur.getDay(); // 5 = Пт, 1 = Пн, 3 = Ср
+        if (day === 5 || day === 1 || day === 3) {
+          const t = types[idx % 3];
+          const week = Math.floor(idx / 3) + 1;
+          const monthIdx = Math.min(11, Math.floor((week - 1) / 4.333));
+          const prog = MONTHLY_PROGRESSIONS[monthIdx] || MONTHLY_PROGRESSIONS[0];
+          const base = BASE_WORKOUTS[t];
+
+          // Каждая 4-я неделя — разгрузочная (deload)
+          const isDeload = (week % 4 === 0 || week === 52);
+
+          const exercises = base.exercises.map(ex => {
+            const isStatic = String(ex.tempo || '').toLowerCase() === 'статика' || /сек/i.test(ex.reps);
+            let s = isDeload ? Math.max(2, prog.sets - 1) : prog.sets;
+            let tempo = isStatic ? "Статика" : (isDeload ? "2-0-1" : prog.tempo);
+            let rest = (ex.equip === 'barbell') ? prog.restBb : prog.restDb;
+            if (isDeload) rest += 15;
+
+            let reps = ex.reps;
+            if (isStatic) {
+              const sec = isDeload ? Math.max(25, prog.staticSec - 10) : prog.staticSec;
+              reps = `${sec} сек`;
+            } else {
+              const delta = isDeload ? 0 : prog.repsDelta;
+              if (delta > 0) {
+                if (ex.reps.includes('/')) {
+                  const parts = ex.reps.split('/');
+                  const num = parseInt(parts[0], 10) || 10;
+                  reps = `${num + delta}/${parts[1]}`;
+                } else if (ex.reps.includes('-')) {
+                  const parts = ex.reps.split('-');
+                  const n1 = parseInt(parts[0], 10) || 10;
+                  const n2 = parseInt(parts[1], 10) || 12;
+                  reps = `${n1 + delta}-${n2 + delta}`;
+                } else {
+                  const num = parseInt(ex.reps, 10) || 12;
+                  reps = `${num + delta}`;
+                }
+              }
+            }
+
+            return {
+              ...ex,
+              sets: s,
+              reps: reps,
+              tempo: tempo,
+              rest: rest,
+              isDeload: isDeload,
+              phaseName: prog.name
+            };
+          });
+
+          ALL_WORKOUTS.push({
+            id: idx,
+            date: new Date(cur),
+            dateString: cur.toISOString().split('T')[0],
+            displayDate: cur.toLocaleDateString('ru-RU', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' }),
+            weekNumber: week,
+            monthNumber: monthIdx + 1,
+            phaseName: prog.name,
+            isDeload: isDeload,
+            title: base.title,
+            exercises: exercises
+          });
+          idx++;
+        }
+        cur.setDate(cur.getDate() + 1);
+      }
+    }
+
+    /* =========================================================================
+       4. СОСТОЯНИЕ И ТАЙМЕРЫ ПО МЕТКАМ ВРЕМЕНИ (TIMESTAMP-BASED)
+       ========================================================================= */
+    const STORAGE_KEY_PROG = 'training_note_prog_v3';
+    const STORAGE_KEY_TIME = 'training_note_time_v3';
+    const STORAGE_KEY_SESS = 'training_note_sess_v3';
+    const STORAGE_KEY_WT = 'training_note_wt_v3';
+
+    let appProgress = { completed: {}, currentViewingId: 0 };
+    let totalSeconds = 0;
+    let activeSession = null; // { startTime: timestamp, workoutId: number }
+    let weightLogs = [{ date: '2026-10-30', weight: 57.0 }];
+    let hasStartPhotoInDB = false;
+    let hasEndPhotoInDB = false;
+    let testingModeEnabled = false;
+
+    function loadState() {
+      try {
+        const p = localStorage.getItem(STORAGE_KEY_PROG);
+        if (p) appProgress = JSON.parse(p);
+      } catch(e) { appProgress = { completed: {}, currentViewingId: 0 }; }
+
+      try {
+        const t = localStorage.getItem(STORAGE_KEY_TIME);
+        if (t) totalSeconds = parseInt(t, 10) || 0;
+      } catch(e) { totalSeconds = 0; }
+
+      try {
+        const s = localStorage.getItem(STORAGE_KEY_SESS);
+        if (s) activeSession = JSON.parse(s);
+      } catch(e) { activeSession = null; }
+
+      try {
+        const w = localStorage.getItem(STORAGE_KEY_WT);
+        if (w) weightLogs = JSON.parse(w);
+      } catch(e) { weightLogs = [{ date: '2026-10-30', weight: 57.0 }]; }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY_PROG, JSON.stringify(appProgress));
+        localStorage.setItem(STORAGE_KEY_TIME, totalSeconds.toString());
+        if (activeSession) localStorage.setItem(STORAGE_KEY_SESS, JSON.stringify(activeSession));
+        else localStorage.removeItem(STORAGE_KEY_SESS);
+        localStorage.setItem(STORAGE_KEY_WT, JSON.stringify(weightLogs));
+      } catch(e) {}
+    }
+
+    function formatHHHMMSS(sec) {
+      const h = Math.floor(sec / 3600);
+      const m = Math.floor((sec % 3600) / 60);
+      const s = sec % 60;
+      return `${String(h).padStart(3, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function formatMMSS(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    // Живой таймер общего времени на тренировках (вычисляется по timestamp, не сбивается при блокировке экрана)
+    function updateLiveTimerUI() {
+      let curElapsed = 0;
+      const statusText = document.getElementById('session-status-text');
+      const pulseDot = document.getElementById('live-pulse');
+      const sessLabel = document.getElementById('current-session-label');
+      const sessAction = document.getElementById('session-action-status');
+      const toggleBtn = document.getElementById('btn-toggle-session');
+
+      if (activeSession && activeSession.startTime) {
+        curElapsed = Math.max(0, Math.floor((Date.now() - activeSession.startTime) / 1000));
+        if (statusText) statusText.textContent = 'АКТИВНА';
+        if (pulseDot) pulseDot.classList.add('active');
+        if (sessLabel) sessLabel.textContent = `Текущая: ${formatMMSS(curElapsed)}`;
+        if (sessAction) sessAction.textContent = `Идёт сессия (${formatMMSS(curElapsed)})`;
+        if (toggleBtn) {
+          toggleBtn.textContent = '■ Завершить сессию';
+          toggleBtn.classList.remove('btn-primary');
+          toggleBtn.disabled = false;
+        }
+      } else {
+        if (statusText) statusText.textContent = 'В ПОКОЕ';
+        if (pulseDot) pulseDot.classList.remove('active');
+        if (sessLabel) sessLabel.textContent = 'Текущая: 00:00';
+        if (sessAction) sessAction.textContent = 'Ожидает старта';
+        if (toggleBtn) {
+          toggleBtn.textContent = '▶ Начать тренировку';
+          toggleBtn.classList.add('btn-primary');
+        }
+        updateSessionStartButtonLock();
+      }
+
+      const totalEl = document.getElementById('live-total-timer');
+      if (totalEl) totalEl.textContent = formatHHHMMSS(totalSeconds + curElapsed);
+    }
+
+    function updateSessionStartButtonLock() {
+      const toggleBtn = document.getElementById('btn-toggle-session');
+      if (!toggleBtn) return;
+      if (!isProgramStarted()) {
+        toggleBtn.disabled = true;
+        toggleBtn.title = 'Тренировки начнутся 30 октября 2026 года';
+        const sessAction = document.getElementById('session-action-status');
+        if (sessAction) sessAction.textContent = 'Старт 30 октября 2026 г.';
+        return;
+      }
+      if (activeSession) {
+        toggleBtn.disabled = false;
+        toggleBtn.title = '';
+        return;
+      }
+      const isFirstWorkout = (appProgress.currentViewingId === 0);
+      const isLastWorkout = (appProgress.currentViewingId === ALL_WORKOUTS.length - 1);
+
+      // Если это тренировка №1 (индекс 0) и фото в IndexedDB ещё нет — блокируем
+      if (isFirstWorkout && !hasStartPhotoInDB) {
+        toggleBtn.disabled = true;
+        toggleBtn.title = 'Перед первой тренировкой необходимо загрузить фото тела';
+      } else if (isLastWorkout && !hasEndPhotoInDB) {
+        toggleBtn.disabled = true;
+        toggleBtn.title = 'Перед финальной тренировкой необходимо загрузить итоговое фото тела и указать параметры';
+      } else {
+        toggleBtn.disabled = false;
+        toggleBtn.title = '';
+      }
+    }
+
+    function toggleWorkoutSession() {
+      if (!isProgramStarted()) {
+        triggerHaptic('medium');
+        showToastNotification('Тренировки начнутся 30 октября 2026 года');
+        return;
+      }
+      const toggleBtn = document.getElementById('btn-toggle-session');
+      if (toggleBtn) toggleBtn.disabled = true; // Защита от двойного клика
+
+      if (activeSession) {
+        const elapsed = Math.max(0, Math.floor((Date.now() - activeSession.startTime) / 1000));
+        totalSeconds += elapsed;
+        activeSession = null;
+        saveState();
+        updateLiveTimerUI();
+        finishCurrentWorkout();
+      } else {
+        const isFirstWorkout = (appProgress.currentViewingId === 0);
+        const isLastWorkout = (appProgress.currentViewingId === ALL_WORKOUTS.length - 1);
+
+        if (isFirstWorkout && !hasStartPhotoInDB) {
+          showToastNotification('Перед первой тренировкой необходимо добавить фото тела в дело');
+          updateSessionStartButtonLock();
+          if (toggleBtn) toggleBtn.disabled = false;
+          return;
+        }
+        if (isLastWorkout && !hasEndPhotoInDB) {
+          showToastNotification('Перед финальной тренировкой укажите итоговые параметры и фото');
+          updateSessionStartButtonLock();
+          if (toggleBtn) toggleBtn.disabled = false;
+          return;
+        }
+
+        activeSession = { startTime: Date.now(), workoutId: appProgress.currentViewingId };
+        saveState();
+        updateLiveTimerUI();
+      }
+      setTimeout(() => { if (toggleBtn) toggleBtn.disabled = false; }, 300);
+    }
+
+    /* =========================================================================
+       5. ОТРИСОВКА ГЛАВНОГО ЭКРАНА (МИНИМАЛИЗМ, ПЕРЕНОС ТЕКСТА, БЕЗ ОБРЕЗКИ)
+       ========================================================================= */
+    async function renderCurrentWorkout() {
+      const w = ALL_WORKOUTS[appProgress.currentViewingId] || ALL_WORKOUTS[0];
+      const isDone = !!(appProgress.completed[w.id] && appProgress.completed[w.id].date);
+
+      document.getElementById('cur-workout-title').textContent = `ТРЕНИРОВКА №${w.id + 1} — ${w.title.toUpperCase()}`;
+      document.getElementById('cur-workout-date').textContent = `${w.displayDate} • 60 мин ${isDone ? '• [ВЫПОЛНЕНО]' : ''}`;
+
+      // Проверка стартового фото для тренировки №1
+      const startPhotoGate = document.getElementById('start-photo-gate');
+      if (w.id === 0) {
+        const photo = await getPhotoFromDB('start_photo');
+        hasStartPhotoInDB = !!(photo && photo.dataUrl);
+        if (startPhotoGate) startPhotoGate.style.display = 'block';
+        updateStartPhotoUI(photo);
+      } else {
+        if (startPhotoGate) startPhotoGate.style.display = 'none';
+      }
+
+      // Проверка итогового фото и параметров для финальной тренировки
+      const endPhotoGate = document.getElementById('end-photo-gate');
+      if (w.id === ALL_WORKOUTS.length - 1) {
+        const endPhoto = await getPhotoFromDB('end_photo');
+        hasEndPhotoInDB = !!(endPhoto && endPhoto.dataUrl && endPhoto.weight >= 30 && endPhoto.height >= 100);
+        if (endPhotoGate) endPhotoGate.style.display = 'block';
+        updateEndGateUI(endPhoto);
+      } else {
+        if (endPhotoGate) endPhotoGate.style.display = 'none';
+      }
+
+      updateSessionStartButtonLock();
+
+    /* Helper: разбор целевых повторений и примечаний */
+    function parseTargetReps(repsStr) {
+      const isPerLeg = /ног/i.test(repsStr || '');
+      const isPerArm = /рук/i.test(repsStr || '');
+      const isSec = /сек/i.test(repsStr || '');
+      
+      let note = '';
+      if (isPerLeg) note = 'на ногу';
+      else if (isPerArm) note = 'на руку';
+      else if (isSec) note = 'сек';
+
+      const matches = (repsStr || '').match(/\d+/g);
+      let targetNum = 12;
+      if (matches && matches.length > 0) {
+        targetNum = parseInt(matches[matches.length - 1], 10);
+      }
+
+      const label = note ? `надо ${targetNum} ${note}` : `надо ${targetNum}`;
+      return { targetNum, note, label };
+    }
+
+    /* Обработка ввода фактических повторений */
+    function onRepsInput(inputEl, targetNum, wId, exId, setNum) {
+      if (!inputEl) return;
+      const raw = inputEl.value.replace(/\D/g, '');
+      if (inputEl.value !== raw) inputEl.value = raw;
+
+      inputEl.classList.remove('under-target', 'target-met');
+      if (raw !== '') {
+        const val = parseInt(raw, 10);
+        if (val < targetNum) {
+          inputEl.classList.add('under-target');
+        } else {
+          inputEl.classList.add('target-met');
+        }
+      }
+
+      if (appProgress.completed[wId] && appProgress.completed[wId].logs && appProgress.completed[wId].logs[exId]) {
+        const setLog = appProgress.completed[wId].logs[exId][setNum - 1];
+        if (setLog && setLog.done) {
+          setLog.reps = raw !== '' ? parseInt(raw, 10) : targetNum;
+          saveState();
+          updateWorkoutStatsDisplay(wId);
+        }
+      }
+    }
+
+    /* Расчёт фактической статистики и объёма тренировки */
+    function calculateWorkoutStats(wId) {
+      const w = ALL_WORKOUTS[wId];
+      if (!w) return { doneSets: 0, totalSets: 0, reps: 0, targetReps: 0, weightedVolume: 0, bwReps: 0 };
+
+      const logs = (appProgress.completed[wId] && appProgress.completed[wId].logs) || {};
+      let doneSets = 0;
+      let totalSets = 0;
+      let reps = 0;
+      let targetReps = 0;
+      let weightedVolume = 0;
+      let bwReps = 0;
+
+      w.exercises.forEach(ex => {
+        const parsed = parseTargetReps(ex.reps);
+        const exWeight = (ex.equip === 'barbell' || ex.equip === 'dumbbells') ? 20 : 0;
+        totalSets += ex.sets;
+
+        const arr = logs[ex.id] || [];
+        for (let s = 1; s <= ex.sets; s++) {
+          targetReps += parsed.targetNum;
+          const setLog = arr[s - 1];
+          if (setLog && setLog.done) {
+            doneSets++;
+            const r = parseInt(setLog.reps, 10) || parsed.targetNum;
+            reps += r;
+            if (exWeight > 0) {
+              weightedVolume += r * exWeight;
+            } else {
+              bwReps += r;
+            }
+          }
+        }
+      });
+
+      return { doneSets, totalSets, reps, targetReps, weightedVolume, bwReps };
+    }
+
+    /* Получение статистики предыдущей такой же тренировки цикла (A/B/C) */
+    function getPreviousWorkoutStats(currentWId) {
+      const cur = ALL_WORKOUTS[currentWId];
+      if (!cur) return null;
+
+      for (let i = currentWId - 1; i >= 0; i--) {
+        const candidate = ALL_WORKOUTS[i];
+        if (candidate.title === cur.title && appProgress.completed[candidate.id] && appProgress.completed[candidate.id].date) {
+          const stats = calculateWorkoutStats(candidate.id);
+          return {
+            workoutNum: candidate.id + 1,
+            date: candidate.displayDate,
+            ...stats
+          };
+        }
+      }
+      return null;
+    }
+
+    /* Получение результатов прошлого выполнения конкретного упражнения */
+    function getPreviousExercisePerformance(currentWId, exId) {
+      const cur = ALL_WORKOUTS[currentWId];
+      if (!cur) return null;
+
+      for (let i = currentWId - 1; i >= 0; i--) {
+        const candidate = ALL_WORKOUTS[i];
+        if (candidate.title === cur.title && appProgress.completed[candidate.id] && appProgress.completed[candidate.id].logs) {
+          const exLogs = appProgress.completed[candidate.id].logs[exId];
+          if (exLogs && exLogs.some(s => s && s.done)) {
+            const doneList = exLogs.filter(s => s && s.done);
+            const repsList = doneList.map(s => s.reps);
+            const totalReps = repsList.reduce((a, b) => a + (parseInt(b, 10) || 0), 0);
+            return {
+              workoutNum: candidate.id + 1,
+              repsList: repsList.join(' · '),
+              totalReps: totalReps
+            };
+          }
+        }
+      }
+      return null;
+    }
+
+    /* Обновление панели живой статистики и сравнения с прошлой тренировкой */
+    function updateWorkoutStatsDisplay(wId) {
+      const statsEl = document.getElementById('workout-stats-panel');
+      if (!statsEl) return;
+      const w = ALL_WORKOUTS[wId];
+      if (!w) return;
+
+      const currentStats = calculateWorkoutStats(wId);
+      const prevStats = getPreviousWorkoutStats(wId);
+
+      let prevComparisonHtml = '';
+      if (prevStats) {
+        const diffReps = currentStats.reps - prevStats.reps;
+        const diffVol = currentStats.weightedVolume - prevStats.weightedVolume;
+        const repsBadge = diffReps >= 0 
+          ? `<span style="color: #000000; font-weight: 700;">+${diffReps} повт</span>` 
+          : `<span style="color: var(--muted);">${diffReps} повт</span>`;
+        const volBadge = diffVol >= 0 
+          ? `<span style="color: #000000; font-weight: 700;">+${diffVol} кг</span>` 
+          : `<span style="color: var(--muted);">${diffVol} кг</span>`;
+
+        prevComparisonHtml = `
+          <div class="stats-comparison-row">
+            <span class="stats-comp-title">Сравнение с прошлой ${w.title} (#${prevStats.workoutNum}):</span>
+            <span class="stats-comp-values">${repsBadge} · ${volBadge}</span>
+          </div>
+        `;
+      } else {
+        prevComparisonHtml = `
+          <div class="stats-comparison-row">
+            <span class="stats-comp-title">Базовая тренировка цикла ${w.title}:</span>
+            <span class="stats-comp-values" style="color: var(--muted);">Формирование стартового объёма</span>
+          </div>
+        `;
+      }
+
+      statsEl.innerHTML = `
+        <div class="stats-grid">
+          <div class="stat-pill">
+            <div class="stat-pill-label">Сеты</div>
+            <div class="stat-pill-val">${currentStats.doneSets} <span class="stat-sub-label">/ ${currentStats.totalSets}</span></div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-pill-label">Повторы (факт)</div>
+            <div class="stat-pill-val">${currentStats.reps} <span class="stat-sub-label">/ ${currentStats.targetReps}</span></div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-pill-label">Объём (снаряды)</div>
+            <div class="stat-pill-val">${currentStats.weightedVolume} <span class="stat-sub-label">кг</span></div>
+          </div>
+        </div>
+        ${prevComparisonHtml}
+      `;
+    }
+
+    const container = document.getElementById('exercise-list-container');
+      container.innerHTML = '';
+      if (!isProgramStarted()) {
+        const preStartNotice = document.createElement('div');
+        preStartNotice.style.cssText = 'border: 1px solid var(--hairline); border-radius: 12px; padding: 10px 14px; background: #fafafa; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem;';
+        preStartNotice.innerHTML = '<span>Старт программы: 30 октября 2026</span><span style="color: var(--muted);">Отметка подходов заблокирована</span>';
+        container.appendChild(preStartNotice);
+      }
+
+      updateWorkoutStatsDisplay(w.id);
+
+      const savedLogs = (appProgress.completed[w.id] && appProgress.completed[w.id].logs) || {};
+
+      w.exercises.forEach((ex, idx) => {
+        const exCard = document.createElement('div');
+        exCard.className = 'exercise-card';
+
+        const tagText = ex.equip === 'barbell' ? 'Штанга 20 кг' : ex.equip === 'dumbbells' ? 'Гантели 2x10 кг' : 'Вес тела';
+        const imgUrl = getExerciseImgUrl(ex.id);
+        const parsed = parseTargetReps(ex.reps);
+        const prevPerf = getPreviousExercisePerformance(w.id, ex.id);
+
+        let prevHintHtml = '';
+        if (prevPerf) {
+          prevHintHtml = `<div class="exercise-prev-hint">Прошлый раз: ${prevPerf.repsList} (${prevPerf.totalReps} повт)</div>`;
+        }
+
+        let rowsHtml = '';
+        for (let s = 1; s <= ex.sets; s++) {
+          const setLog = savedLogs[ex.id] && savedLogs[ex.id][s - 1];
+          const isSetDone = !!(setLog && setLog.done);
+          const savedReps = (setLog && setLog.reps !== undefined && setLog.reps !== null) ? String(setLog.reps) : '';
+
+          let statusClass = '';
+          if (savedReps !== '') {
+            const num = parseInt(savedReps, 10);
+            if (num < parsed.targetNum) statusClass = 'under-target';
+            else statusClass = 'target-met';
+          }
+
+          const weightText = ex.equip === 'barbell' ? '20 кг' : ex.equip === 'dumbbells' ? '2x10' : 'Свой';
+
+          rowsHtml += `
+            <div class="set-row ${isSetDone ? 'completed' : ''}" id="row-${w.id}-${ex.id}-${s}">
+              <div class="mobile-info-stack">
+                <span class="col-set">Сет ${s}</span>
+                <div class="mobile-sub-meta">
+                  <span class="col-weight">${weightText}</span>
+                  <span class="mobile-meta-dot">·</span>
+                  <span class="col-target">${parsed.label}</span>
+                </div>
+              </div>
+              <div class="col-fact">
+                <input type="text"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  class="actual-reps-input ${statusClass}"
+                  id="reps-${w.id}-${ex.id}-${s}"
+                  placeholder="${parsed.targetNum}"
+                  value="${savedReps}"
+                  oninput="onRepsInput(this, ${parsed.targetNum}, ${w.id}, '${ex.id}', ${s})"
+                  title="Фактические повторения (цель: ${parsed.targetNum})">
+              </div>
+              <div class="col-action">
+                ${(() => {
+                  const started = isProgramStarted();
+                  return `<button class="btn btn-sm ${isSetDone ? 'btn-secondary' : 'btn-primary'} set-done-btn" 
+                    id="btn-set-${w.id}-${ex.id}-${s}"
+                    ${!started ? 'disabled style="opacity:0.45;cursor:not-allowed;" title="Тренировки начнутся 30 октября 2026 года"' : ''}
+                    onclick="if(!isProgramStarted()){showToastNotification('Тренировки начнутся 30 октября 2026 года');return;}toggleSet(${w.id}, '${ex.id}', ${s}, ${ex.rest}, '${ex.name.replace(/'/g, "\\'")}', ${parsed.targetNum})">
+                    ${isSetDone ? '<svg class="sf-icon" style="width:14px;height:14px;vertical-align:middle;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : 'Сделано'}
+                  </button>`;
+                })()}
+              </div>
+            </div>
+          `;
+        }
+
+        const tempoLabel = String(ex.tempo || '').toLowerCase() === 'статика' ? 'статика' : `темп ${ex.tempo}`;
+
+        exCard.innerHTML = `
+          <div class="exercise-header-row">
+            <div class="exercise-name">${idx + 1}. ${ex.name}</div>
+            <div class="exercise-params-block">
+              <div class="exercise-params-line">
+                <span class="param-token">${ex.sets} × ${ex.reps}</span>
+                <span class="param-dot">·</span>
+                <span class="param-token">${tempoLabel}</span>
+              </div>
+              <div class="exercise-params-line">
+                <span class="param-token">${tagText}</span>
+                <span class="param-dot">·</span>
+                <span class="param-token param-muscle">${ex.muscle}</span>
+              </div>
+            </div>
+            ${prevHintHtml}
+            <div>
+              <button class="toggle-details-btn" onclick="toggleDetails('details-${w.id}-${ex.id}', this)">+ Техника и подсказка Near</button>
+              <div id="details-${w.id}-${ex.id}" class="exercise-details-pane">
+                ${ex.tip} (Отдых: ${ex.rest} сек)
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-body-stack">
+            <div class="exercise-media-box" onclick="openImageLightbox('${imgUrl}', '${ex.name.replace(/'/g, "\\'")}', '${ex.muscle.replace(/'/g, "\\'")}')" title="Нажмите, чтобы открыть анатомическую 3D-модель крупнее">
+              ${imgUrl ? `
+                <img src="${imgUrl}" alt="${ex.name}" class="exercise-media-img" loading="lazy"
+                  onload="onImageLoadSuccess('${ex.id}', '${imgUrl}')"
+                  onerror="onImageLoadError(this, '${ex.id}')">
+                <span class="zoom-hint-badge">
+                  <svg class="m3-icon" style="width:13px;height:13px;vertical-align:middle;margin-right:2px;" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm.5-7H9v2H7v1h2v2h1v-2h2V9h-2V7z"/></svg>
+                  <span>Крупнее</span>
+                </span>
+                <div class="exercise-placeholder" style="display: none;">
+                  <div class="placeholder-title">${ex.name}</div>
+                  <div class="placeholder-muscle">${ex.muscle}</div>
+                </div>
+              ` : `
+                <div class="exercise-placeholder">
+                  <div class="placeholder-title">${ex.name}</div>
+                  <div class="placeholder-muscle">${ex.muscle}</div>
+                </div>
+              `}
+            </div>
+
+            <div class="sets-table">
+              ${rowsHtml}
+            </div>
+          </div>
+        `;
+        container.appendChild(exCard);
+      });
+
+      const finishBtn = document.getElementById('btn-finish-workout');
+      if (finishBtn) {
+        if (!isProgramStarted()) {
+          finishBtn.disabled = true;
+          finishBtn.style.opacity = '0.45';
+          finishBtn.style.cursor = 'not-allowed';
+          finishBtn.title = 'Тренировки начнутся 30 октября 2026 года';
+        } else {
+          finishBtn.disabled = false;
+          finishBtn.style.opacity = '1';
+          finishBtn.style.cursor = 'pointer';
+          finishBtn.title = '';
+        }
+      }
+
+      updateMiniPuzzleStrip();
+    }
+
+    function toggleDetails(paneId, btnEl) {
+      const pane = document.getElementById(paneId);
+      if (!pane) return;
+      if (pane.style.display === 'block') {
+        pane.style.display = 'none';
+        btnEl.textContent = '+ Техника и подсказка Near';
+      } else {
+        pane.style.display = 'block';
+        btnEl.textContent = '— Скрыть подсказку';
+      }
+    }
+
+    function toggleSet(wId, exId, setNum, restSec, exName, targetNum) {
+      if (!isProgramStarted()) {
+        triggerHaptic('medium');
+        showToastNotification('Тренировки начнутся 30 октября 2026 года');
+        return;
+      }
+      if (!appProgress.completed[wId]) appProgress.completed[wId] = { logs: {} };
+      if (!appProgress.completed[wId].logs[exId]) appProgress.completed[wId].logs[exId] = [];
+
+      const inputEl = document.getElementById(`reps-${wId}-${exId}-${setNum}`);
+      let curVal = inputEl ? inputEl.value.trim() : '';
+
+      const cur = appProgress.completed[wId].logs[exId][setNum - 1];
+      const isDone = cur && cur.done;
+
+      if (!isDone) {
+        let finalReps;
+        if (curVal === '') {
+          // Если поле оставили пустым, при нажатии «Сделано» засчитывай цель из плана
+          finalReps = targetNum;
+          if (inputEl) {
+            inputEl.value = targetNum;
+            inputEl.classList.remove('under-target');
+            inputEl.classList.add('target-met');
+          }
+        } else {
+          finalReps = parseInt(curVal, 10) || targetNum;
+          if (inputEl) {
+            inputEl.classList.remove('under-target', 'target-met');
+            if (finalReps < targetNum) inputEl.classList.add('under-target');
+            else inputEl.classList.add('target-met');
+          }
+        }
+
+        appProgress.completed[wId].logs[exId][setNum - 1] = {
+          done: true,
+          reps: finalReps,
+          target: targetNum
+        };
+
+        const btn = document.getElementById(`btn-set-${wId}-${exId}-${setNum}`);
+        const row = document.getElementById(`row-${wId}-${exId}-${setNum}`);
+
+        if (btn) {
+          btn.classList.remove('btn-primary');
+          btn.innerHTML = '<svg class="sf-icon" style="width:14px;height:14px;vertical-align:middle;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>';
+        }
+        if (row) row.classList.add('completed');
+
+        startRestTimer(restSec, exName);
+      } else {
+        appProgress.completed[wId].logs[exId][setNum - 1] = {
+          done: false,
+          reps: curVal !== '' ? parseInt(curVal, 10) : targetNum,
+          target: targetNum
+        };
+
+        const btn = document.getElementById(`btn-set-${wId}-${exId}-${setNum}`);
+        const row = document.getElementById(`row-${wId}-${exId}-${setNum}`);
+
+        if (btn) {
+          btn.classList.add('btn-primary');
+          btn.textContent = 'Сделано';
+        }
+        if (row) row.classList.remove('completed');
+      }
+
+      saveState();
+      updateMiniPuzzleStrip();
+      updateWorkoutStatsDisplay(wId);
+    }
+
+    function navigateWorkout(delta) {
+      const next = appProgress.currentViewingId + delta;
+      if (next >= 0 && next < ALL_WORKOUTS.length) {
+        appProgress.currentViewingId = next;
+        renderCurrentWorkout();
+      }
+    }
+
+    function finishCurrentWorkout() {
+      if (!isProgramStarted()) {
+        triggerHaptic('medium');
+        showToastNotification('Тренировки начнутся 30 октября 2026 года');
+        return;
+      }
+      const w = ALL_WORKOUTS[appProgress.currentViewingId];
+      if (!appProgress.completed[w.id]) appProgress.completed[w.id] = { logs: {} };
+      appProgress.completed[w.id].date = new Date().toISOString();
+
+      const currentStats = calculateWorkoutStats(w.id);
+      const prevStats = getPreviousWorkoutStats(w.id);
+
+      saveState();
+      renderCurrentWorkout();
+      updateFullPuzzle();
+
+      const modalSets = document.getElementById('modal-sets');
+      const modalReps = document.getElementById('modal-reps');
+      const modalVol = document.getElementById('modal-volume');
+      const modalBw = document.getElementById('modal-bw-reps');
+      const modalComp = document.getElementById('modal-comparison');
+
+      if (modalSets) modalSets.textContent = currentStats.doneSets;
+      if (modalReps) modalReps.textContent = currentStats.reps;
+      if (modalVol) modalVol.textContent = `${currentStats.weightedVolume} кг`;
+      if (modalBw) modalBw.textContent = `${currentStats.bwReps} повт`;
+
+      if (modalComp) {
+        if (prevStats) {
+          const diffReps = currentStats.reps - prevStats.reps;
+          const diffVol = currentStats.weightedVolume - prevStats.weightedVolume;
+          const rText = diffReps >= 0 ? `+${diffReps}` : `${diffReps}`;
+          const vText = diffVol >= 0 ? `+${diffVol}` : `${diffVol}`;
+          modalComp.innerHTML = `Прогресс относительно прошлой ${w.title} (#${prevStats.workoutNum}): <strong>${rText} повт</strong>, <strong>${vText} кг объёма</strong>.`;
+        } else {
+          modalComp.textContent = `Стартовый замер объёма для цикла ${w.title} зафиксирован.`;
+        }
+      }
+
+      document.getElementById('finish-modal').classList.add('active');
+
+      // Если это была последняя тренировка (#156, 30.10.2027)
+      if (w.id === 155 || w.id >= ALL_WORKOUTS.length - 1) {
+        setTimeout(() => {
+          showToastNotification('ФИНАЛЬНАЯ ТРЕНИРОВКА ГОДА ЗАВЕРШЕНА! Откройте Итог года');
+          switchTab('verdict');
+        }, 800);
+      }
+    }
+
+    function closeFinishModal() {
+      document.getElementById('finish-modal').classList.remove('active');
+    }
+
+    /* =========================================================================
+       6. ПАЗЛ (РЕАЛЬНЫЕ ЗАВЕРШЕННЫЕ НЕДЕЛИ, А НЕ ВСЕ СРАЗУ)
+       ========================================================================= */
+    function getCompletedWeeksCount() {
+      let count = 0;
+      for (let w = 1; w <= 52; w++) {
+        const weekWorkouts = ALL_WORKOUTS.filter(item => item.weekNumber === w);
+        const allDone = weekWorkouts.length > 0 && weekWorkouts.every(item => appProgress.completed[item.id] && appProgress.completed[item.id].date);
+        if (allDone) count++;
+      }
+      return count;
+    }
+
+    function updateMiniPuzzleStrip() {
+      const strip = document.getElementById('mini-puzzle-strip');
+      if (!strip) return;
+      strip.innerHTML = '';
+
+      const doneWeeks = getCompletedWeeksCount();
+      const curW = ALL_WORKOUTS[appProgress.currentViewingId] || ALL_WORKOUTS[0];
+
+      for (let w = 1; w <= 52; w++) {
+        const weekWorkouts = ALL_WORKOUTS.filter(item => item.weekNumber === w);
+        const allDone = weekWorkouts.length > 0 && weekWorkouts.every(item => appProgress.completed[item.id] && appProgress.completed[item.id].date);
+        const isCurrent = curW.weekNumber === w;
+
+        const cell = document.createElement('div');
+        cell.className = `strip-cell ${allDone ? 'done' : ''} ${isCurrent ? 'current' : ''}`;
+        strip.appendChild(cell);
+      }
+
+      const scoreEl = document.getElementById('strip-score-text');
+      if (scoreEl) scoreEl.textContent = `${doneWeeks} / 52`;
+    }
+
+    function updateFullPuzzle() {
+      const grid = document.getElementById('full-puzzle-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      const doneCount = getCompletedWeeksCount();
+      const curW = ALL_WORKOUTS[appProgress.currentViewingId] || ALL_WORKOUTS[0];
+
+      for (let w = 1; w <= 52; w++) {
+        const weekWorkouts = ALL_WORKOUTS.filter(item => item.weekNumber === w);
+        const allDone = weekWorkouts.length > 0 && weekWorkouts.every(item => appProgress.completed[item.id] && appProgress.completed[item.id].date);
+        const isCurrent = curW.weekNumber === w;
+
+        const p = document.createElement('div');
+        p.className = `puzzle-piece ${allDone ? 'done' : ''} ${isCurrent ? 'current' : ''}`;
+        p.textContent = w;
+        p.onclick = () => {
+          if (weekWorkouts[0]) {
+            appProgress.currentViewingId = weekWorkouts[0].id;
+            renderCurrentWorkout();
+            switchTab('today');
+          }
+        };
+        grid.appendChild(p);
+      }
+
+      const scoreEl = document.getElementById('full-puzzle-score');
+      if (scoreEl) scoreEl.textContent = `${doneCount} / 52 НЕДЕЛЬ`;
+    }
+
+    /* =========================================================================
+       7. ЭКРАН ИТОГОВ ГОДА (БЕЗ ПРЕДЗАПОЛНЕНИЯ, С ВАЛИДАЦИЕЙ И СРАВНЕНИЕМ ФОТО)
+       ========================================================================= */
+    async function checkVerdictScreenLock() {
+      const lockedView = document.getElementById('verdict-locked-view');
+      const inputSection = document.getElementById('verdict-input-section');
+      const statusBadge = document.getElementById('verdict-status-badge');
+      const testPresets = document.getElementById('verdict-test-presets');
+
+      const lastIdx = ALL_WORKOUTS.length > 0 ? (ALL_WORKOUTS.length - 1) : 155;
+      const isLastWorkoutCompleted = !!(appProgress.completed[lastIdx] && appProgress.completed[lastIdx].date);
+
+      if (isLastWorkoutCompleted || testingModeEnabled) {
+        if (lockedView) lockedView.style.display = 'none';
+        if (inputSection) inputSection.style.display = 'block';
+        if (testPresets && testingModeEnabled) testPresets.style.display = 'block';
+        if (statusBadge) {
+          statusBadge.textContent = testingModeEnabled ? 'РЕЖИМ ТЕСТИРОВАНИЯ' : 'ДОСТУП ОТКРЫТ';
+          statusBadge.style.color = '#000000';
+        }
+
+        // Проверяем наличие фото и параметров в IndexedDB
+        const endPhoto = await getPhotoFromDB('end_photo');
+        const endStatus = document.getElementById('end-photo-status');
+        const weightInput = document.getElementById('final-weight-input');
+        const heightInput = document.getElementById('final-height-input');
+
+        if (endPhoto) {
+          if (endPhoto.dataUrl && endStatus) {
+            endStatus.innerHTML = '<svg class="m3-icon" style="color:#000000;width:14px;height:14px;vertical-align:middle;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> <span>Итоговое фото сохранено в IndexedDB</span>';
+            endStatus.style.color = '#000000';
+          }
+          if (endPhoto.weight && weightInput && !weightInput.value) {
+            weightInput.value = endPhoto.weight;
+          }
+          if (endPhoto.height && heightInput && !heightInput.value) {
+            heightInput.value = endPhoto.height;
+          }
+        }
+      } else {
+        if (lockedView) lockedView.style.display = 'block';
+        if (inputSection) inputSection.style.display = 'none';
+        if (testPresets) testPresets.style.display = 'none';
+        if (statusBadge) {
+          statusBadge.textContent = 'СТАТУС: ЗАБЛОКИРОВАН';
+          statusBadge.style.color = '#000000';
+        }
+      }
+    }
+
+    function enableVerdictTestingMode() {
+      testingModeEnabled = true;
+      checkVerdictScreenLock();
+    }
+
+    async function applyVerdictPreset(presetType) {
+      const wInput = document.getElementById('final-weight-input');
+      const hInput = document.getElementById('final-height-input');
+      if (!wInput || !hInput) return;
+
+      if (presetType === 'win') {
+        wInput.value = '66.5';
+        hInput.value = '175.5';
+      } else if (presetType === 'progress') {
+        wInput.value = '62.0';
+        hInput.value = '172.0';
+      } else if (presetType === 'loss') {
+        wInput.value = '55.5';
+        hInput.value = '170.0';
+      }
+
+      // Создаём качественные демо-аватары, если пользователь тестирует без реальных файлов
+      let startPhoto = await getPhotoFromDB('start_photo');
+      if (!startPhoto || !startPhoto.dataUrl) {
+        const startSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400"><rect width="300" height="400" fill="#f8f8f8"/><circle cx="150" cy="130" r="50" fill="#ddd"/><path d="M70 290 Q150 200 230 290 Z" fill="#ddd"/><text x="150" y="325" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">ТЕСТ: СТАРТ</text><text x="150" y="348" font-family="monospace" font-size="12" text-anchor="middle" fill="#111">57.0 КГ / 170.0 СМ</text><text x="150" y="368" font-family="monospace" font-size="10" text-anchor="middle" fill="#666">30.10.2026</text></svg>`;
+        await savePhotoToDB('start_photo', {
+          dataUrl: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(startSvg),
+          date: '30.10.2026',
+          weight: 57.0,
+          height: 170.0
+        });
+      }
+
+      const wVal = parseFloat(wInput.value);
+      const hVal = parseFloat(hInput.value);
+      let endPhoto = await getPhotoFromDB('end_photo');
+      if (!endPhoto || !endPhoto.dataUrl) {
+        const endSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400"><rect width="300" height="400" fill="#f8f8f8"/><circle cx="150" cy="130" r="55" fill="#cfcfcf"/><path d="M60 290 Q150 185 240 290 Z" fill="#cfcfcf"/><text x="150" y="325" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">ТЕСТ: 1 ГОД СПУСТЯ</text><text x="150" y="348" font-family="monospace" font-size="12" text-anchor="middle" fill="#111">${wVal.toFixed(1)} КГ / ${hVal.toFixed(1)} СМ</text><text x="150" y="368" font-family="monospace" font-size="10" text-anchor="middle" fill="#666">30.10.2027</text></svg>`;
+        await savePhotoToDB('end_photo', {
+          dataUrl: 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(endSvg),
+          date: '30.10.2027',
+          weight: wVal,
+          height: hVal
+        });
+      } else {
+        endPhoto.weight = wVal;
+        endPhoto.height = hVal;
+        await savePhotoToDB('end_photo', endPhoto);
+      }
+
+      const endStatus = document.getElementById('end-photo-status');
+      if (endStatus) {
+        endStatus.innerHTML = '<svg class="m3-icon" style="color:#000000;width:14px;height:14px;vertical-align:middle;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> <span>Фото готово к расчёту</span>';
+        endStatus.style.color = '#000000';
+      }
+
+      await calculateYearVerdict();
+    }
+
+    async function calculateYearVerdict() {
+      const weightInput = document.getElementById('final-weight-input');
+      const heightInput = document.getElementById('final-height-input');
+
+      const valW = parseFloat(weightInput?.value);
+      const valH = parseFloat(heightInput?.value);
+
+      // Строгая валидация без alert
+      if (isNaN(valW) || valW < 30 || valW > 200) {
+        showToastNotification('Введите корректный вес тела (от 30 до 200 кг)');
+        weightInput?.focus();
+        return;
+      }
+      if (isNaN(valH) || valH < 100 || valH > 250) {
+        showToastNotification('Введите корректный рост (от 100 до 250 см)');
+        heightInput?.focus();
+        return;
+      }
+
+      // Проверка второго фото
+      let endPhoto = await getPhotoFromDB('end_photo');
+      if (!endPhoto && !testingModeEnabled) {
+        showToastNotification('Необходимо сделать или загрузить фото тела через 1 год');
+        return;
+      }
+
+      // Сохраняем введенные данные в IndexedDB
+      if (!endPhoto) endPhoto = { date: '30.10.2027' };
+      endPhoto.weight = valW;
+      endPhoto.height = valH;
+      await savePhotoToDB('end_photo', endPhoto);
+
+      const initialWeight = 57.0;
+      const initialHeight = 170.0;
+      const diffW = +(valW - initialWeight).toFixed(1);
+      const diffH = +(valH - initialHeight).toFixed(1);
+
+      // Условие достижения цели: вес >= 65 кг И/ИЛИ рост >= 175 см
+      const isGoalReached = (valW >= 65.0 || valH >= 175.0);
+      const hasProgress = (valW > initialWeight || valH > initialHeight);
+      const completedWeeks = getCompletedWeeksCount();
+
+      const box = document.getElementById('verdict-result-box');
+      if (!box) return;
+      box.style.display = 'block';
+
+      if (isGoalReached) {
+        // Успех (Цель достигнута или превышена)
+        box.innerHTML = `
+          <div style="border: 2px solid #000000; padding: 20px; background: #ffffff; border-radius: 16px;">
+            <div style="font-family: var(--font-title); font-size: 1.25rem; color: #000000; font-weight: 700; margin-bottom: 8px; letter-spacing: 0.06em;">
+              ЦЕЛЬ ДОСТИГНУТА. ГОЛОВОЛОМКА ПОЛНОСТЬЮ СОБРАНА.
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.65; margin-bottom: 12px; color: #111;">
+              «Все 52 детали пазла встали на свои места. Физическая оболочка трансформирована с математической точностью. 
+              Старт: 57.0 кг / 170.0 см. Итог: ${valW.toFixed(1)} кг / ${valH.toFixed(1)} см. 
+              Прирост массы: +${diffW} кг. Прирост роста: +${diffH} см. Твоё имя в Тетради вписано чернилами победы.»
+            </p>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+              <div class="delta-badge" style="color: #000000; border-color: #000000;">Δ Вес: +${diffW} кг</div>
+              <div class="delta-badge" style="color: #000000; border-color: #000000;">Δ Рост: +${diffH} см</div>
+              <div class="delta-badge">52 / 52 недель закрыто</div>
+            </div>
+
+            <div style="font-family: var(--font-title); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-top: 14px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+              <svg class="m3-icon" style="color: #000000; width: 16px; height: 16px;" viewBox="0 0 24 24"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5z"/></svg>
+              <span>Анимация сборки пазла года Near (52 детали):</span>
+            </div>
+            <div class="victory-puzzle-grid" id="victory-puzzle-strip"></div>
+            <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #000000; text-align: right; display: flex; justify-content: flex-end; align-items: center; gap: 4px; margin-top: 4px;">
+              <svg class="m3-icon" style="color: #000000; width: 13px; height: 13px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Пазл собран на 100%</span>
+            </div>
+          </div>
+        `;
+
+        // Запуск анимации 52 деталей пазла
+        setTimeout(() => {
+          const puzzleContainer = document.getElementById('victory-puzzle-strip');
+          if (puzzleContainer) {
+            puzzleContainer.innerHTML = '';
+            for (let i = 1; i <= 52; i++) {
+              const piece = document.createElement('div');
+              piece.className = 'victory-piece';
+              piece.textContent = i;
+              piece.style.animationDelay = `${(i - 1) * 30}ms`;
+              puzzleContainer.appendChild(piece);
+              setTimeout(() => {
+                if (i % 4 === 0 || i === 52) playClick(480 + i * 8);
+              }, (i - 1) * 30);
+            }
+          }
+        }, 50);
+
+      } else if (hasProgress) {
+        // Прогресс есть, но норматив не взят
+        const missingW = (valW < 65.0) ? (65.0 - valW).toFixed(1) : '0';
+        const missingH = (valH < 175.0) ? (175.0 - valH).toFixed(1) : '0';
+
+        box.innerHTML = `
+          <div style="border: 1px solid #8e8e93; padding: 20px; background: #ffffff; border-radius: 16px;">
+            <div style="font-family: var(--font-title); font-size: 1.15rem; color: #000000; font-weight: 700; margin-bottom: 8px;">
+              ПРОМЕЖУТОЧНЫЙ РЕЗУЛЬТАТ: НЕПОЛНАЯ ГИПЕРТРОФИЯ
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.65; margin-bottom: 12px; color: #3a3a3c;">
+              Прогресс зафиксирован: 57.0 кг → ${valW.toFixed(1)} кг (+${diffW} кг) и 170.0 см → ${valH.toFixed(1)} см (+${diffH} см). 
+              Однако до норматива 65.0 кг не хватило ${missingW} кг${valH < 175.0 ? ` (до роста 175 см не хватило ${missingH} см)` : ''}. 
+              Анализ Near: недостаточный калорийный профицит (+400 ккал/день) или нерегулярный сон. 
+              Стимул тренировок получен, но строительного материала не хватило. Головоломка решена частично.
+            </p>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+              <div class="delta-badge" style="color: #000000; border-color: #000000;">Δ Вес: +${diffW} кг</div>
+              <div class="delta-badge" style="color: #000000; border-color: #000000;">Δ Рост: +${diffH} см</div>
+              <div class="delta-badge">Не хватило: ${missingW} кг</div>
+            </div>
+
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted);">
+              Реально собрано недель: ${completedWeeks} из 52.
+            </div>
+          </div>
+        `;
+      } else {
+        // Поражение (вес не вырос или упал)
+        box.innerHTML = `
+          <div style="border: 1px solid #000000; padding: 20px; background: #ffffff; border-radius: 16px;">
+            <div style="font-family: var(--font-title); font-size: 1.15rem; color: #000000; font-weight: 700; margin-bottom: 8px;">
+              РЕЗУЛЬТАТ: ПОРАЖЕНИЕ. ИМЯ В ТЕТРАДИ ВЫЧЕРКНУТО.
+            </div>
+            <p style="font-size: 0.95rem; line-height: 1.65; margin-bottom: 12px; color: #3a3a3c;">
+              Итоговый вес: ${valW.toFixed(1)} кг (${diffW >= 0 ? '+' : ''}${diffW} кг). Итоговый рост: ${valH.toFixed(1)} см (${diffH >= 0 ? '+' : ''}${diffH} см). 
+              Год прошёл впустую. Мышечные волокна эктоморфа не выросли. 
+              Без неукоснительного профицита калорий и постоянной отдачи в каждом сете результат равен нулю. 
+              Головоломка рассыпалась.
+            </p>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px;">
+              <div class="delta-badge" style="color: #000000; border-color: #000000;">Δ Вес: ${diffW >= 0 ? '+' : ''}${diffW} кг</div>
+              <div class="delta-badge" style="color: #000000; border-color: #000000;">Δ Рост: ${diffH >= 0 ? '+' : ''}${diffH} см</div>
+              <div class="delta-badge">Поражение</div>
+            </div>
+
+            <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted);">
+              Реально собрано недель: ${completedWeeks} из 52.
+            </div>
+          </div>
+        `;
+      }
+
+      // Отрисовка двух фото рядом
+      await renderPhotosComparison(valW, valH, diffW, diffH);
+
+      // Отрисовка графика года
+      const chartWrap = document.getElementById('verdict-chart-wrap');
+      if (chartWrap) chartWrap.style.display = 'block';
+      drawFinalYearChart(valW);
+
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    async function renderPhotosComparison(finalWeight, finalHeight, diffW, diffH) {
+      const wrap = document.getElementById('photos-comparison-wrap');
+      const startImg = document.getElementById('comp-start-img');
+      const endImg = document.getElementById('comp-end-img');
+      const startData = document.getElementById('comp-start-data');
+      const endData = document.getElementById('comp-end-data');
+
+      const startPhoto = await getPhotoFromDB('start_photo');
+      const endPhoto = await getPhotoFromDB('end_photo');
+
+      if (wrap) wrap.style.display = 'block';
+
+      const defaultPlaceholder = (label, details) => 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400" viewBox="0 0 300 400"><rect width="300" height="400" fill="#f8f8f8"/><circle cx="150" cy="130" r="50" fill="#ddd"/><path d="M70 290 Q150 200 230 290 Z" fill="#ddd"/><text x="150" y="325" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" fill="#333">${label}</text><text x="150" y="348" font-family="monospace" font-size="11" text-anchor="middle" fill="#888">${details}</text></svg>`);
+
+      if (startImg) {
+        startImg.src = (startPhoto && startPhoto.dataUrl) ? startPhoto.dataUrl : defaultPlaceholder('ФОТО НА СТАРТЕ', '57.0 кг · 170.0 см · 30.10.2026');
+      }
+      if (endImg) {
+        endImg.src = (endPhoto && endPhoto.dataUrl) ? endPhoto.dataUrl : defaultPlaceholder('ИТОГОВОЕ ФОТО', `${finalWeight.toFixed(1)} кг · ${finalHeight.toFixed(1)} см · 30.10.2027`);
+      }
+      if (startData) {
+        startData.textContent = `57.0 кг · 170.0 см · 30.10.2026`;
+      }
+      if (endData) {
+        endData.textContent = `${finalWeight.toFixed(1)} кг · ${finalHeight.toFixed(1)} см (${diffW >= 0 ? '+' : ''}${diffW} кг · ${diffH >= 0 ? '+' : ''}${diffH} см)`;
+      }
+    }
+
+    function drawFinalYearChart(finalWeight) {
+      const canvas = document.getElementById('finalYearCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const points = [
+        { d: '30.10.26', wt: 57.0 },
+        { d: 'Янв 27', wt: 57.0 + (finalWeight - 57.0) * 0.25 },
+        { d: 'Апр 27', wt: 57.0 + (finalWeight - 57.0) * 0.50 },
+        { d: 'Июл 27', wt: 57.0 + (finalWeight - 57.0) * 0.75 },
+        { d: '30.10.27', wt: finalWeight }
+      ];
+
+      const pad = 30;
+      const chW = w - pad * 2;
+      const chH = h - pad * 2;
+      const minW = Math.min(55, finalWeight - 2);
+      const maxW = Math.max(70, finalWeight + 3);
+
+      ctx.strokeStyle = '#eeeeee';
+      ctx.lineWidth = 1;
+      for (let wt = Math.floor(minW); wt <= Math.ceil(maxW); wt += 3) {
+        const y = pad + chH - ((wt - minW) / (maxW - minW)) * chH;
+        ctx.beginPath();
+        ctx.moveTo(pad, y);
+        ctx.lineTo(w - pad, y);
+        ctx.stroke();
+      }
+
+      // Линия цели 65 кг
+      const targetY = pad + chH - ((65.0 - minW) / (maxW - minW)) * chH;
+      ctx.strokeStyle = '#E9D461';
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(pad, targetY);
+      ctx.lineTo(w - pad, targetY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Линия факта
+      ctx.strokeStyle = '#E581B1';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      points.forEach((p, i) => {
+        const x = pad + (i / (points.length - 1)) * chW;
+        const y = pad + chH - ((p.wt - minW) / (maxW - minW)) * chH;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+    }
+
+    /* =========================================================================
+       8. КАЛЕНДАРЬ И ТРЕКЕР ВЕСА
+       ========================================================================= */
+    function renderCalendar() {
+      const list = document.getElementById('calendar-list');
+      if (!list) return;
+      list.innerHTML = '';
+
+      let doneCount = 0;
+      ALL_WORKOUTS.forEach(w => {
+        const isDone = !!(appProgress.completed[w.id] && appProgress.completed[w.id].date);
+        if (isDone) doneCount++;
+
+        const item = document.createElement('div');
+        item.style.padding = '8px 10px';
+        item.style.border = '1px solid var(--hairline)';
+        item.style.fontFamily = 'var(--font-mono)';
+        item.style.fontSize = '0.72rem';
+        item.style.cursor = 'pointer';
+        item.style.display = 'flex';
+        item.style.justifyContent = 'space-between';
+        if (isDone) item.style.textDecoration = 'line-through';
+
+        item.onclick = () => {
+          appProgress.currentViewingId = w.id;
+          renderCurrentWorkout();
+          switchTab('today');
+        };
+
+        item.innerHTML = `
+          <span>№${w.id + 1} ${w.title}</span>
+          <span>${w.date.getDate()} ${w.date.toLocaleDateString('ru-RU', { month: 'short' })}</span>
+        `;
+        list.appendChild(item);
+      });
+
+      const countEl = document.getElementById('cal-count');
+      if (countEl) countEl.textContent = `${doneCount} / 156`;
+    }
+
+    function renderWeight() {
+      const hist = document.getElementById('weight-history');
+      if (!hist) return;
+      hist.innerHTML = '';
+
+      weightLogs.forEach(entry => {
+        const div = document.createElement('div');
+        div.style.padding = '3px 0';
+        div.textContent = `${entry.date}: ${entry.weight.toFixed(1)} кг`;
+        hist.appendChild(div);
+      });
+
+      drawWeightChart();
+    }
+
+    function addWeightRecord() {
+      const d = document.getElementById('weight-input-date')?.value || new Date().toISOString().split('T')[0];
+      const val = parseFloat(document.getElementById('weight-input-val')?.value);
+      if (isNaN(val) || val < 30 || val > 200) {
+        showToastNotification('Введите корректный вес тела от 30 до 200 кг');
+        return;
+      }
+
+      weightLogs.push({ date: d, weight: val });
+      saveState();
+      renderWeight();
+      document.getElementById('weight-input-val').value = '';
+    }
+
+    function drawWeightChart() {
+      const canvas = document.getElementById('weightCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+
+      const w = rect.width;
+      const h = rect.height;
+      ctx.clearRect(0, 0, w, h);
+
+      const data = weightLogs;
+      if (!data.length) return;
+
+      const pad = 24;
+      const chW = w - pad * 2;
+      const chH = h - pad * 2;
+      const minW = Math.min(55, ...data.map(x => x.weight));
+      const maxW = Math.max(70, ...data.map(x => x.weight));
+
+      ctx.strokeStyle = '#eeeeee';
+      ctx.lineWidth = 1;
+      for (let wt = Math.floor(minW); wt <= Math.ceil(maxW); wt += 3) {
+        const y = pad + chH - ((wt - minW) / (maxW - minW)) * chH;
+        ctx.beginPath();
+        ctx.moveTo(pad, y);
+        ctx.lineTo(w - pad, y);
+        ctx.stroke();
+      }
+
+      ctx.strokeStyle = '#E581B1';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      data.forEach((p, i) => {
+        const x = pad + (i / Math.max(1, data.length - 1)) * chW;
+        const y = pad + chH - ((p.weight - minW) / (maxW - minW)) * chH;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+    }
+
+    /* =========================================================================
+       9. ТАЙМЕР ОТДЫХА ПО МЕТКАМ ВРЕМЕНИ (TIMESTAMP-BASED)
+       ========================================================================= */
+    let restTimerInterval = null;
+    let restTargetTimestamp = 0;
+    let restTotalSeconds = 90;
+
+    function startRestTimer(sec, exName) {
+      clearInterval(restTimerInterval);
+      restTotalSeconds = sec;
+      restTargetTimestamp = Date.now() + sec * 1000;
+
+      const bar = document.getElementById('timer-bar');
+      const sub = document.getElementById('timer-subtext');
+      if (sub) sub.textContent = `Отдых после: ${exName}`;
+      if (bar) bar.style.display = 'flex';
+      tickRestTimer();
+
+      restTimerInterval = setInterval(tickRestTimer, 500);
+    }
+
+    function tickRestTimer() {
+      const now = Date.now();
+      const remainingSecs = Math.max(0, Math.ceil((restTargetTimestamp - now) / 1000));
+
+      const text = document.getElementById('timer-ring-text');
+      const fg = document.getElementById('timer-ring-fg');
+      if (text) text.textContent = `${remainingSecs}s`;
+      if (fg) {
+        const progress = remainingSecs / restTotalSeconds;
+        const offset = 100 * (1 - progress);
+        fg.style.strokeDashoffset = offset;
+      }
+
+      if (remainingSecs <= 0) {
+        clearInterval(restTimerInterval);
+        playBell();
+        setTimeout(() => {
+          const bar = document.getElementById('timer-bar');
+          if (bar) bar.style.display = 'none';
+        }, 1200);
+      }
+    }
+
+    function adjustTimer(d) {
+      restTargetTimestamp += d * 1000;
+      restTotalSeconds = Math.max(restTotalSeconds, Math.ceil((restTargetTimestamp - Date.now()) / 1000));
+      tickRestTimer();
+    }
+
+    function skipTimer() {
+      clearInterval(restTimerInterval);
+      const bar = document.getElementById('timer-bar');
+      if (bar) bar.style.display = 'none';
+    }
+
+    let audioCtx = null;
+    function playBell() {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!audioCtx) audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.frequency.setValueAtTime(587.33, now);
+        osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+        g.gain.setValueAtTime(0.2, now);
+        g.gain.exponentialRampToValueAtTime(0.001, now + 1.2);
+        osc.connect(g);
+        g.connect(audioCtx.destination);
+        osc.start(now);
+        osc.stop(now + 1.2);
+      } catch(e) {}
+    }
+
+    function playClick(freq = 587) {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!audioCtx) audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        osc.frequency.setValueAtTime(freq, now);
+        g.gain.setValueAtTime(0.04, now);
+        g.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.connect(g);
+        g.connect(audioCtx.destination);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } catch(e) {}
+    }
+
+    
+    /* =========================================================================
+       HOLOGRAPHIC PEARL PARTICLES (CANVAS BACKGROUND)
+       ========================================================================= */
+    function initHolographicParticles() {
+      const canvas = document.getElementById('holographic-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (mediaQuery.matches) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+
+      let width = 0;
+      let height = 0;
+      let animationFrameId = null;
+      let isPaused = false;
+
+      function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      }
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      const isMobile = width < 600;
+      const particleCount = isMobile ? 35 : 65;
+      const particles = [];
+
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          size: Math.random() * 2 + 0.8,
+          speedY: Math.random() * 0.45 + 0.15,
+          speedX: (Math.random() - 0.5) * 0.2,
+          opacity: Math.random() * 0.22 + 0.08,
+          phase: Math.random() * Math.PI * 2,
+          type: Math.random() > 0.75 ? 'line' : 'dot',
+          lineLen: Math.random() * 12 + 6
+        });
+      }
+
+      let lastTime = performance.now();
+
+      function render(time) {
+        if (isPaused) return;
+        const delta = Math.min((time - lastTime) / 1000, 0.1);
+        lastTime = time;
+
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.y -= p.speedY * (delta * 60);
+          p.x += p.speedX * (delta * 60);
+          p.phase += delta * 1.5;
+
+          if (p.y < -20) {
+            p.y = height + 10;
+            p.x = Math.random() * width;
+          }
+          if (p.x < -20) p.x = width + 10;
+          if (p.x > width + 20) p.x = -10;
+
+          const shimmer = Math.sin(p.phase) * 0.08 + p.opacity;
+          const alpha = Math.max(0.04, Math.min(0.28, shimmer));
+
+          // Soft Pastel Pink & Lemon Yellow particle highlights
+          if (p.type === 'line') {
+            ctx.strokeStyle = "rgba(229, 129, 177, " + (alpha * 0.75) + ")";
+            ctx.lineWidth = 0.75;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p.x + p.speedX * 8, p.y - p.lineLen);
+            ctx.stroke();
+          } else {
+            ctx.fillStyle = (i % 2 === 0) 
+              ? "rgba(243, 181, 207, " + alpha + ")" 
+              : "rgba(250, 245, 171, " + (alpha * 1.1) + ")";
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+
+        animationFrameId = requestAnimationFrame(render);
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          isPaused = true;
+          if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        } else {
+          isPaused = false;
+          lastTime = performance.now();
+          animationFrameId = requestAnimationFrame(render);
+        }
+      });
+
+      mediaQuery.addEventListener('change', (e) => {
+        if (e.matches) {
+          isPaused = true;
+          if (animationFrameId) cancelAnimationFrame(animationFrameId);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        } else {
+          isPaused = false;
+          lastTime = performance.now();
+          animationFrameId = requestAnimationFrame(render);
+        }
+      });
+    }
+
+    function triggerHaptic(type = 'light') {
+      try {
+        if (navigator.vibrate) {
+          if (type === 'light') navigator.vibrate(12);
+          else if (type === 'medium') navigator.vibrate(24);
+          else if (type === 'success') navigator.vibrate([16, 40, 20]);
+        }
+      } catch(e) {}
+    }
+
+    /* =========================================================================
+       CALENDAR & FILTERS (TAB: PLAN)
+       ========================================================================= */
+    let currentCalendarFilter = 'all';
+
+    function filterCalendar(mode) {
+      triggerHaptic('light');
+      currentCalendarFilter = mode;
+      document.querySelectorAll('.cal-filter-btn').forEach(b => b.classList.remove('active'));
+      const btn = document.getElementById('cal-filter-' + mode);
+      if (btn) btn.classList.add('active');
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const list = document.getElementById('calendar-list');
+      if (!list) return;
+      list.innerHTML = '';
+
+      let doneCount = 0;
+      ALL_WORKOUTS.forEach(w => {
+        const isDone = !!(appProgress.completed[w.id] && appProgress.completed[w.id].date);
+        if (isDone) doneCount++;
+
+        if (currentCalendarFilter === 'done' && !isDone) return;
+        if (currentCalendarFilter === 'pending' && isDone) return;
+
+        const isCurrent = (w.id === appProgress.currentViewingId);
+
+        const item = document.createElement('div');
+        item.className = 'calendar-item-card' + (isDone ? ' done' : '') + (isCurrent ? ' current' : '');
+        item.onclick = () => {
+          triggerHaptic('light');
+          appProgress.currentViewingId = w.id;
+          renderCurrentWorkout();
+          switchTab('today');
+        };
+
+        item.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;">
+            <span class="cal-status-icon" style="display:flex;align-items:center;">
+              ${isDone ? '<svg class="sf-icon" style="width:16px;height:16px;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>' : '<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#d1d1d6;"></span>'}
+            </span>
+            <div style="min-width: 0;">
+              <div style="font-family: var(--font-body); font-size: 0.85rem; font-weight: 600; color: #000; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                №${w.id + 1} — ${w.title}
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #8e8e93; margin-top: 1px;">
+                ${w.displayDate}
+              </div>
+            </div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.7rem; color: ${isDone ? '#000000' : '#8e8e93'}; font-weight: 500; white-space: nowrap;">
+            ${isDone ? '[ВЫПОЛНЕНО]' : 'Открыть →'}
+          </div>
+        `;
+        list.appendChild(item);
+      });
+
+      const countEl = document.getElementById('cal-count');
+      if (countEl) countEl.textContent = `${doneCount} / ${ALL_WORKOUTS.length}`;
+    }
+
+    /* =========================================================================
+       STATS OVERVIEW (TAB: STATS)
+       ========================================================================= */
+    function renderStatsOverview() {
+      const timeEl = document.getElementById('stats-total-time');
+      const doneEl = document.getElementById('stats-workouts-done');
+      const setsEl = document.getElementById('stats-total-sets');
+      const volEl = document.getElementById('stats-total-volume');
+
+      let curElapsed = (activeSession && activeSession.startTime) ? Math.max(0, Math.floor((Date.now() - activeSession.startTime) / 1000)) : 0;
+      if (timeEl) timeEl.textContent = formatHHHMMSS(totalSeconds + curElapsed);
+
+      let doneWorkouts = 0;
+      let totalDoneSets = 0;
+      let totalVol = 0;
+
+      ALL_WORKOUTS.forEach(w => {
+        const comp = appProgress.completed[w.id];
+        if (comp && comp.date) doneWorkouts++;
+        if (comp && comp.logs) {
+          Object.keys(comp.logs).forEach(exId => {
+            const arr = comp.logs[exId] || [];
+            arr.forEach(s => {
+              if (s && s.done) {
+                totalDoneSets++;
+                const reps = parseInt(s.reps, 10) || 0;
+                const ex = w.exercises.find(e => e.id === exId);
+                const wt = (ex && (ex.equip === 'barbell' || ex.equip === 'dumbbells')) ? 20 : 0;
+                totalVol += reps * wt;
+              }
+            });
+          });
+        }
+      });
+
+      if (doneEl) doneEl.textContent = `${doneWorkouts} / ${ALL_WORKOUTS.length}`;
+      if (setsEl) setsEl.textContent = `${totalDoneSets}`;
+      if (volEl) volEl.textContent = `${totalVol} кг`;
+    }
+
+    /* =========================================================================
+       PROFILE PHOTOS (TAB: PROFILE)
+       ========================================================================= */
+    async function renderProfilePhotos() {
+      const startPhoto = await getPhotoFromDB('start_photo');
+      const endPhoto = await getPhotoFromDB('end_photo');
+
+      const startImg = document.getElementById('profile-start-img');
+      const startPlaceholder = document.getElementById('profile-start-placeholder');
+      const endImg = document.getElementById('profile-end-img');
+      const endPlaceholder = document.getElementById('profile-end-placeholder');
+      const endData = document.getElementById('profile-end-data');
+
+      if (startPhoto && startPhoto.dataUrl) {
+        if (startImg) { startImg.src = startPhoto.dataUrl; startImg.style.display = 'block'; }
+        if (startPlaceholder) startPlaceholder.style.display = 'none';
+      } else {
+        if (startImg) startImg.style.display = 'none';
+        if (startPlaceholder) startPlaceholder.style.display = 'flex';
+      }
+
+      if (endPhoto && endPhoto.dataUrl) {
+        if (endImg) { endImg.src = endPhoto.dataUrl; endImg.style.display = 'block'; }
+        if (endPlaceholder) endPlaceholder.style.display = 'none';
+        if (endData && endPhoto.weight && endPhoto.height) {
+          endData.textContent = `${endPhoto.weight.toFixed(1)} кг · ${endPhoto.height.toFixed(1)} см`;
+        }
+      } else {
+        if (endImg) endImg.style.display = 'none';
+        if (endPlaceholder) endPlaceholder.style.display = 'flex';
+      }
+    }
+
+    /* =========================================================================
+       NAVIGATION & TAB SWITCHING
+       ========================================================================= */
+    function switchTab(tabId) {
+      triggerHaptic('light');
+
+      const allowedTabs = ['today', 'plan', 'stats', 'profile'];
+      let targetTab = tabId;
+      if (!allowedTabs.includes(targetTab)) {
+        if (targetTab === 'puzzle' || targetTab === 'calendar') targetTab = 'plan';
+        else if (targetTab === 'weight') targetTab = 'stats';
+        else if (targetTab === 'verdict' || targetTab === 'info') targetTab = 'profile';
+        else targetTab = 'today';
+      }
+
+      document.querySelectorAll('.tab-content').forEach(el => {
+        el.style.display = 'none';
+      });
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      const targetEl = document.getElementById('tab-' + targetTab);
+      if (targetEl) targetEl.style.display = 'block';
+
+      const navBtn = document.getElementById('nav-btn-' + targetTab);
+      if (navBtn) navBtn.classList.add('active');
+
+      if (targetTab === 'plan') {
+        renderCalendar();
+      } else if (targetTab === 'stats') {
+        renderStatsOverview();
+        renderWeight();
+        updateFullPuzzle();
+      } else if (targetTab === 'profile') {
+        renderProfilePhotos();
+        checkVerdictScreenLock();
+      } else if (targetTab === 'today') {
+        updateMiniPuzzleStrip();
+      }
+
+      try {
+        localStorage.setItem('training_note_active_tab', targetTab);
+      } catch (e) {}
+
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    /* TWO-STEP RESET PROGRESS */
+    function openResetModal() {
+      triggerHaptic('medium');
+      const modal = document.getElementById('reset-confirm-modal');
+      if (modal) modal.style.display = 'flex';
+    }
+
+    function closeResetModal() {
+      const modal = document.getElementById('reset-confirm-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    async function executeResetAllData() {
+      try {
+        localStorage.clear();
+      } catch(e) {}
+
+      try {
+        await clearPhotosFromDB();
+      } catch(e) {}
+
+      appProgress = { completed: {}, currentViewingId: 0 };
+      totalSeconds = 0;
+      activeSession = null;
+      weightLogs = [{ date: '2026-10-30', weight: 57.0 }];
+      hasStartPhotoInDB = false;
+      hasEndPhotoInDB = false;
+      testingModeEnabled = false;
+
+      saveState();
+      closeResetModal();
+
+      if (typeof restTimerInterval !== 'undefined' && restTimerInterval) {
+        clearInterval(restTimerInterval);
+        restTimerInterval = null;
+      }
+      const timerBar = document.getElementById('timer-bar');
+      if (timerBar) timerBar.style.display = 'none';
+
+      generateSchedule();
+      await renderCurrentWorkout();
+      updateLiveTimerUI();
+      updateMiniPuzzleStrip();
+      renderStatsOverview();
+      renderCalendar();
+      renderWeight();
+      renderProfilePhotos();
+      checkVerdictScreenLock();
+
+      switchTab('today');
+      showToastNotification('Все данные и фото успешно удалены');
+    }
+
+
+
+    function resetAllDataPrompt() {
+      openResetModal();
+    }
+
+    function showToastNotification(msg) {
+      let toast = document.getElementById('app-toast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'app-toast';
+        toast.className = 'app-toast';
+        document.body.appendChild(toast);
+      }
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toast._timer);
+      toast._timer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    function exportDataJson() {
+      const data = { appProgress, totalSeconds, weightLogs, date: new Date().toISOString() };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `training_note_${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      if (window.__IS_ANDROID_BLOCKED__) return;
+      initHolographicParticles();
+      generateSchedule();
+      loadState();
+      await renderCurrentWorkout();
+      updateLiveTimerUI();
+      setInterval(updateLiveTimerUI, 1000);
+      updateMiniPuzzleStrip();
+
+      // Restore saved tab or default to today
+      let savedTab = 'today';
+      try {
+        savedTab = localStorage.getItem('training_note_active_tab') || 'today';
+      } catch(e) {}
+      switchTab(savedTab);
+    });
+  </script>
+</body>
+</html>
