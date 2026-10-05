@@ -7,6 +7,53 @@
   <meta name="description" content="Персональный годовой план силовых тренировок и трекер набора мышечной массы с разборной штангой 20 кг в эстетике тетради Near (Death Note)." />
 
   <script>
+    /* Фатальный экран ошибки после полного удаления приложения */
+    function showFatalErrorScreen() {
+      document.title = 'ERROR — System Purged';
+      try {
+        var shell = document.getElementById('app-shell');
+        if (shell) shell.remove();
+        var nav = document.querySelector('.tabs-nav');
+        if (nav) nav.remove();
+        var cvs = document.getElementById('holographic-canvas');
+        if (cvs) cvs.remove();
+        var timerBar = document.getElementById('timer-bar');
+        if (timerBar) timerBar.remove();
+        var modal = document.getElementById('reset-confirm-modal');
+        if (modal) modal.remove();
+        var toast = document.getElementById('app-toast');
+        if (toast) toast.remove();
+      } catch (e) {}
+
+      if (document.body) {
+        document.body.innerHTML = '';
+        document.body.style.cssText = 'margin:0 !important;padding:0 !important;background:#0d0d0e !important;color:#ffffff !important;display:flex !important;align-items:center !important;justify-content:center !important;min-height:100vh !important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif !important;box-sizing:border-box !important;user-select:none !important;-webkit-user-select:none !important;overflow:hidden !important;';
+
+        var errBox = document.createElement('div');
+        errBox.style.cssText = 'max-width:380px;width:calc(100% - 32px);padding:36px 24px;border:1.5px solid #E581B1;background:#141215;box-shadow:0 8px 32px rgba(229,129,177,0.22);border-radius:20px;text-align:center;box-sizing:border-box;margin:auto;';
+
+        errBox.innerHTML = '' +
+          '<div style="font-family:DeathNote,-apple-system,sans-serif;font-size:3rem;letter-spacing:0.12em;color:#F3B5CF;margin-bottom:8px;text-transform:uppercase;font-weight:900;line-height:1;">ERROR</div>' +
+          '<div style="font-family:monospace;font-size:0.72rem;letter-spacing:0.06em;color:#2b2608;background:#FAF5AB;border:1px solid #E9D461;padding:4px 10px;border-radius:6px;display:inline-block;margin-bottom:20px;text-transform:uppercase;font-weight:700;">SYSTEM PURGED · DATA DESTROYED</div>' +
+          '<p style="font-size:1rem;line-height:1.5;color:#ffffff;margin:0 0 14px 0;font-weight:700;">Приложение и все данные полностью удалены.</p>' +
+          '<p style="font-size:0.84rem;line-height:1.55;color:#a19ba0;margin:0;border-top:1px solid rgba(229,129,177,0.3);padding-top:16px;">Доступ заблокирован. Этот экран нельзя убрать или обойти. Чтобы полностью восстановить работу, необходимо очистить данные этого сайта в настройках браузера (очистить кэш / хранилище) и зайти заново.</p>';
+
+        document.body.appendChild(errBox);
+      }
+    }
+    window.showFatalErrorScreen = showFatalErrorScreen;
+
+    /* Проверка блокировки после полного удаления (Fatal Purge) */
+    try {
+      if (localStorage.getItem('__APP_DELETED_FATAL_ERROR__') === '1') {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', showFatalErrorScreen);
+        } else {
+          showFatalErrorScreen();
+        }
+      }
+    } catch(e) {}
+
     /* Блокировка доступа только для Android. На iPhone, iPad и ПК ничего не создаётся */
     (function checkPlatform() {
       try {
@@ -1284,8 +1331,9 @@
             <svg class="sf-icon" style="width:15px;height:15px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-14 9v2h14v-2H5z"/></svg>
             <span>Экспорт данных (JSON)</span>
           </button>
-          <button class="btn btn-sm btn-secondary" style="border-color: #8e8e93; color: #000000;" onclick="openResetModal()">
-            <span>Сбросить все данные</span>
+          <button class="btn btn-sm" style="background: rgba(229, 129, 177, 0.12); border: 1.5px solid var(--primary-stroke); color: #d84587; font-weight: 700;" onclick="openResetModal()">
+            <svg class="sf-icon" style="width:14px;height:14px;stroke:#d84587;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></svg>
+            <span>Удалить абсолютно всё (DELETE DATA)</span>
           </button>
         </div>
       </div>
@@ -1294,19 +1342,22 @@
 
   <!-- TWO-STEP RESET CONFIRMATION MODAL -->
   <div class="modal-overlay" id="reset-confirm-modal" onclick="if(event.target === this) closeResetModal()">
-    <div class="modal-box">
-      <div style="font-family: var(--font-title); font-size: 1.15rem; color: #111111; margin-bottom: 8px; font-weight: 700; text-transform: uppercase;">
-        СБРОС ДЕЛА
+    <div class="modal-box" style="border: 2px solid #E581B1; background: #ffffff;">
+      <div style="font-family: var(--font-title); font-size: 1.2rem; color: #111111; margin-bottom: 6px; font-weight: 700; text-transform: uppercase;">
+        УДАЛИТЬ АБСОЛЮТНО ВСЁ
       </div>
-      <p style="font-size: 0.88rem; line-height: 1.5; margin-bottom: 18px; color: var(--muted);">
-        Это действие удалит весь текущий прогресс, историю замеров веса и фотографии. Продолжить?
+      <div style="font-family: var(--font-mono); font-size: 0.72rem; color: #d84587; font-weight: 700; margin-bottom: 12px; text-transform: uppercase;">
+        [ FATAL PURGE / DELETE DATA ]
+      </div>
+      <p style="font-size: 0.88rem; line-height: 1.55; margin-bottom: 18px; color: #3a3a3c;">
+        Будет удалено абсолютно всё: все тренировки, замеры веса, фото и само приложение. После подтверждения возникнет фатальная ошибка <strong>ERROR</strong>. Вы не сможете пользоваться сайтом, пока полностью не очистите данные браузера для этой страницы.
       </p>
       <div style="display: flex; justify-content: flex-end; gap: 8px;">
         <button class="btn btn-sm btn-secondary" onclick="closeResetModal()" style="min-width: 80px;">
           Отмена
         </button>
-        <button class="btn btn-sm btn-primary" onclick="executeResetAllData()" style="min-width: 90px;">
-          Сбросить
+        <button class="btn btn-sm btn-primary" onclick="executeResetAllData()" style="min-width: 140px; font-weight: 700; background: #F3B5CF; border-color: #E581B1; color: #2c1b24;">
+          DELETE DATA
         </button>
       </div>
     </div>
@@ -3534,44 +3585,35 @@
     }
 
     async function executeResetAllData() {
-      try {
-        localStorage.clear();
-      } catch(e) {}
+      triggerHaptic('heavy');
 
       try {
         await clearPhotosFromDB();
       } catch(e) {}
 
-      appProgress = { completed: {}, currentViewingId: 0 };
-      totalSeconds = 0;
-      activeSession = null;
-      weightLogs = [{ date: '2026-10-30', weight: 57.0 }];
-      hasStartPhotoInDB = false;
-      hasEndPhotoInDB = false;
-      testingModeEnabled = false;
+      try {
+        if (window.indexedDB) {
+          indexedDB.deleteDatabase('training_note_photos_db');
+        }
+      } catch(e) {}
 
-      saveState();
-      closeResetModal();
+      try {
+        localStorage.clear();
+        sessionStorage.clear();
+      } catch(e) {}
+
+      try {
+        localStorage.setItem('__APP_DELETED_FATAL_ERROR__', '1');
+      } catch(e) {}
 
       if (typeof restTimerInterval !== 'undefined' && restTimerInterval) {
         clearInterval(restTimerInterval);
         restTimerInterval = null;
       }
-      const timerBar = document.getElementById('timer-bar');
-      if (timerBar) timerBar.style.display = 'none';
 
-      generateSchedule();
-      await renderCurrentWorkout();
-      updateLiveTimerUI();
-      updateMiniPuzzleStrip();
-      renderStatsOverview();
-      renderCalendar();
-      renderWeight();
-      renderProfilePhotos();
-      checkVerdictScreenLock();
-
-      switchTab('today');
-      showToastNotification('Все данные и фото успешно удалены');
+      if (typeof window.showFatalErrorScreen === 'function') {
+        window.showFatalErrorScreen();
+      }
     }
 
 
